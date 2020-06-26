@@ -4,7 +4,7 @@
 import data from './data/pokemon/pokemon.js';
 
 
-export const sortData = () => {
+export const data2 = () => {
   let myArray = [];
   for (let prueba1 of data.pokemon){
     let firstObject = {
