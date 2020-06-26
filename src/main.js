@@ -1,5 +1,6 @@
-import { example } from './data.js';
-import data from './data/pokemon/pokemon.js';
+import { sortData } from './data.js';
+
+let result = sortData();
+//console.log(result);
 
 
-console.log(example, data);
