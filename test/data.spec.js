@@ -1,12 +1,12 @@
-import { example, anotherExample } from '../src/data.js';
+/*import { data2, anotherExample } from '../src/data.js';*/
+import { data2 } from '../src/data.js';
 
-
-describe('example', () => {
+describe('data2 es una función', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof data2).toBe('function');
   });
-
-  it('returns `example`', () => {
+});
+/*  it.skip('returns `example`', () => {
     expect(example()).toBe('example');
   });
 });
@@ -17,7 +17,8 @@ describe('anotherExample', () => {
     expect(typeof anotherExample).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
+  it.skip('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
 });
+*/
