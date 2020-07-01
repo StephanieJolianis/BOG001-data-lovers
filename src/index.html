@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
-    <title>Pokemon Go Dictionary </title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bungee Inline" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <img src="pngwave.png" id="pokemonLogo">
-      <h1 class="titlePokemon">Pokemon GO</h1>
-      <h2 class="titlePokemon">Dictionary</h2>
-    </header>
-    <main><label for="search">Search Pokemon:</label>
-      <input type="search" id="search" name="search">
-      <button>Search</button>
-      </main>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon Go Dictionary </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img src="imagenes/pokemon.png" widht="150px" height="150px"></div>
+    <span id="dictionary">Dictionary</span>
+  </header>
+
+
+  <div class="content">
+
+    <main>
+      <div class=search1>
+        <div class=search2>
+          <img src="imagenes/pokeball.png" widht="16px" height="16px">
+          <label for="search"></label>
+          <input type="text" class="search" name="search" placeholder="Search your Pokemon">
+        </div>
+
+        <div class="nav">
+          <ul class="nav1">
+
+            <li><a href="">Type </a>
+              <ul class="nav2">
+                <li><a href="">Grass</a></li>
+                <li><a href="">Poison</a></li>
+                <li><a href="">Height</a></li>
+                <li><a href="">Fire</a></li>
+                <li><a href="">Ice</a></li>
+                <li><a href="">Flying</a></li>
+                <li><a href="">Psychic</a></li>
+                <li><a href="">Water</a></li>
+                <li><a href="">Ground</a></li>
+                <li><a href="">Rock</a></li>
+              </ul>
+            </li>
+
+            <li><a href="">Height</a></li>
+            <li><a href="">Weight</a></li>
+            <li><a href="">Spawn Time</a></li>
+          </ul>
+        </div>
+    </main>
+
+
     <div id="root"></div>
-  
+
+
     <script src="main.js" type="module"></script>
-  </body>
+</body>
+
 </html>
