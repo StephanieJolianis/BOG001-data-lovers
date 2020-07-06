@@ -2,14 +2,9 @@ body{
   margin: 0;
 } 
 
-.logo, .menu, .pokemon, footer, main {
+.logo, .menu, .pokemon, footer {
   padding: 1em 2em;
 } 
-
-/*.pokemon {
-  float: left;
-  box-sizing: border-box;
-}*/
 
 .logo {
   background-color: cornsilk;
@@ -27,17 +22,6 @@ body{
 main{
   background-color: turquoise;
   width: 100%;
-  flow:left
-  /*height: 100px;*/
-
-  
-}
-
-.pokemon{
-  background-color: red;
-  width: 30%;
-  height: 100px;
-  margin: 5px;
 }
 
 footer{
@@ -52,34 +36,41 @@ footer{
   }
 
   main{
-    height: 60%;
-    /*display: flex;*/
-
-    
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5px;
+    justify-content: center;
   }
-}
 
-
-
- 
-/*
-@media screen and (min-width:780px) and (max-width:1024px){
-  .logo {
-    background-color: pink;
-    }
   .pokemon{
-    width: 25%;
+    background-color: red;
+    width: 100px;
+    height: 120px;
+    margin: 5px;
   }
 }
+ 
 
-@media screen and (min-width:480px) and (max-width:780px){
-  .logo {
-    background-color: pink;
+@media screen and (min-width:780px) {
+  
+  main{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 15px;
+    justify-content: center;
+
+    /*display: flex;*/
+  }
+
+  .pokemon{
+    background-color: gray;
+    width: 100px;
+    height: 180px;
+    margin: 15px;
   }
 }
-
- */
-
 
  
 
