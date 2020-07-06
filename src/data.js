@@ -1,8 +1,4 @@
-// estas funciones son de ejemplo
-
-// estas funciones son de ejemplo
 import data from './data/pokemon/pokemon.js';
-
 
 export const data2 = () => {
   let myArray = [];
@@ -21,5 +17,3 @@ export const data2 = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
-
-
