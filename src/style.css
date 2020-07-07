@@ -1,22 +1,74 @@
 body{
-  margin: 0;
+  margin:0;
 } 
 
-.logo, .menu, .pokemon, footer {
-  padding: 1em 2em;
+.menu, .pokemon, footer, main {
+  padding: 1em  1em;
 } 
 
 .logo {
-  background-color: cornsilk;
+  background-color: #77C9F9;
   width: 100%;
-  /*height: 100px;*/
-
+  display:flex;
+  align-items: flex-end;
+    justify-content: center;
+  padding: 0em  1em;
 }
 
-.menu {
-  background-color: yellow;
+
+/*.menu {
+  background-color: #F7C900;
   width: 100%;
-  /*height: 35px;*/
+}*/
+
+.menu > nav{
+background-color: #F7C900;
+z-index: 1000;
+max-width: 1000px;
+width: 100%;
+margin: 8vw, auto;
+}
+
+.menu_bar{
+  display:none;
+}
+
+header nav ul{
+  list-style:none;
+}
+
+header nav ul li{
+  display: inline-block;
+  position: relative;
+}
+
+header nav ul li a{
+ color: #2D4C8F;
+ font-size: x-large;
+ display:block;
+ text-decoration: none;
+ padding:1vw;
+}
+
+header nav ul li :hover{
+color: #F83500;
+}
+
+header nav ul li:hover .children{
+display: block;
+}
+
+header nav ul li .children{
+  display: none;
+  background: #FAD224;
+  position: absolute;
+  z-index:1000;
+}
+
+header nav ul li .children li{
+  display:block;
+  overflow: hidden;
+border-bottom: 1px solid #77C9F9;
 }
 
 main{
@@ -26,20 +78,33 @@ main{
 
 footer{
   /*height: 50px;*/
-  background-color: orange;
+  background-color: #F7C900;
   width: 100%;
 }
 
 @media screen and (max-width:480px){
-  .logo {
-    background-color: blue;
+  .logo img{
+    height: 18vw;
   }
 
+  .logo1{
+    width: 70%;
+  }
+
+  .pikachu{
+    width: 30%;
+    height: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .pikachu img{
+    height: 14vw;
+  }
   main{
     display:flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 5px;
     justify-content: center;
   }
 
@@ -52,13 +117,34 @@ footer{
 }
  
 
-@media screen and (min-width:780px) {
+@media screen and (min-width:480px){
+
+  .logo{
+   height: 10vw;
+  }
+  
+  .logo1{
+    width: 60%;
+  }
+  .logo img{
+    height: 8vw;
+  
+  }
+  .pikachu{
+    width: 40%;
+    height: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .pikachu img{
+    height: 6vw;
+  }
   
   main{
     display:flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 15px;
     justify-content: center;
 
     /*display: flex;*/
@@ -66,8 +152,8 @@ footer{
 
   .pokemon{
     background-color: gray;
-    width: 100px;
-    height: 180px;
+    width: 8%;
+    height: 12vw;
     margin: 15px;
   }
 }
