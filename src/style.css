@@ -2,6 +2,7 @@ body{
   margin:0;
 } 
 
+
 .menu, .pokemon, footer, main {
   padding: 1em  1em;
 } 
@@ -11,15 +12,20 @@ body{
   width: 100%;
   display:flex;
   align-items: flex-end;
-    justify-content: center;
+  justify-content: center;
   padding: 0em  1em;
 }
 
+.pikachu img {
+  position: fixed;
+}
 
-/*.menu {
+
+.menu {
   background-color: #F7C900;
   width: 100%;
-}*/
+  position: fixed;
+}
 
 .menu > nav{
 background-color: #F7C900;
@@ -40,6 +46,7 @@ header nav ul{
 header nav ul li{
   display: inline-block;
   position: relative;
+  
 }
 
 header nav ul li a{
@@ -63,13 +70,20 @@ header nav ul li .children{
   background: #FAD224;
   position: absolute;
   z-index:1000;
+  padding: 0vw;
+  
 }
 
 header nav ul li .children li{
   display:block;
   overflow: hidden;
-border-bottom: 1px solid #77C9F9;
+  border-bottom: 1px solid #77C9F9;
+  padding-right: 4vw;
+  padding-left: 4vw;
+  padding-bottom: 1vw;
+  padding-top: 1vw;
 }
+
 
 main{
   background-color: turquoise;
@@ -82,7 +96,8 @@ footer{
   width: 100%;
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:800px){
+  
   .logo img{
     height: 18vw;
   }
@@ -108,6 +123,48 @@ footer{
     justify-content: center;
   }
 
+  .menu_bar{
+    display: block;
+    width: 100%;
+    position: fixed;
+    background-color: #F7C900;
+  }
+
+  .menu_btn {
+    display: block;
+    padding: 5vw;
+    overflow: hidden;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2D4C8F;
+  }
+
+  header nav {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    margin: 0;
+    height: 100%;
+    overflow: scroll;
+    
+  }
+
+  header nav ul {
+    padding: 5vw;
+  }
+
+  header nav ul li {
+    display: block;
+    border-bottom: 1px solid #77C9F9;
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+  }
+
+  header nav ul li a  {
+    display: block;
+  }
+
   .pokemon{
     background-color: red;
     width: 100px;
@@ -117,7 +174,7 @@ footer{
 }
  
 
-@media screen and (min-width:480px){
+@media screen and (min-width:800px){
 
   .logo{
    height: 10vw;
@@ -136,6 +193,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
   }
   .pikachu img{
     height: 6vw;
