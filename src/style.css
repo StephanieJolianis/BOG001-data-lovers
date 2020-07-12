@@ -71,12 +71,16 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
-  background-color: thistle;
-  overflow-y: scroll;
+  overflow:hidden;
   align-items: center;
   justify-content: space-evenly;
+  background-image: url(imagenes/background2.jpg);
+  background-color: blue;
+  background-size: contain;
+  width: 100%;
+  justify-content: center;
 }
+
 
 .pokemon {
   height: 40vw;
@@ -141,22 +145,15 @@ footer {
   grid-column-end: 9;
   grid-row-start: 6;
   grid-row-end: 7;
-  padding-right: 4vw;
+  /*padding-right: 4vw;
   padding-left: 4vw;
   padding-bottom: 1vw;
-  padding-top: 1vw;
+  padding-top: 1vw;*/
+  background-color: #F7C900;
 }
 
 
-main{
-  background-image: url(imagenes/background2.jpg);
-  background-color: blue;
-  background-size: contain;
-  width: 100%;
-  display:flex;
-  justify-content: center;
- 
-}
+
 
 .container{
   display:flex;
@@ -178,9 +175,6 @@ main{
   border-radius: 5px;
 }
 
-footer{
-  background-color: #F7C900;
-}
 
 
 
@@ -396,34 +390,10 @@ footer{
 
 
 
-@media screen and (max-width:800px){
+
   
-  .logo img{
-    height: 18vw;
-  }
-
-  .logo1{
-    width: 70%;
-  }
-
-  .pikachu{
-    width: 30%;
-    height: 8vw;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  .pikachu img{
-    height: 14vw;
-  }
   
-  .menu_bar{
-    display: block;
-    width: 100%;
-    position: fixed;
-    background-color: #F7C900;
-  }
-
+  
 
 @media screen and (min-width:485px){
   .grid {
