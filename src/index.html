@@ -9,64 +9,64 @@
 </head>
 
 <body>
-  <header>
+  <div class="grid">
 
-    <div class="logo">
-      <div class="pikachu"><img src="imagenes/pikachuweb.png"></div>
-      <div class="logo1"><img src="imagenes/logoweb.png"></div>
+    <figure class="pokemonDictionary">
+      <img src="imagenes/logoweb.png">
+    </figure>
+    <figure class="pikachuImage">
+      <img src="imagenes/pikachuweb.png">
+    </figure>
+
+    <div class="menuBar">
+      <a class="menuBtn" onclick="openNav()"> Menu </a>
     </div>
 
-    <div class="menu">
-      <div class="menu_bar">
-        <a href="" class="menu_btn">Menu</a>
-      </div>
+    <nav id="navMenu">
+      <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">x</a>
+      <ul class="mainMenu">
+        <li id="filterButton">Filter</li>
+        <li id="sortButton"><a> Sort </a></li>
+          <ul class="sortMenu">
+            <li class="sortMenuOptions"> <a> A-Z</a></li>
+            <li class="sortMenuOptions"><a> Z-A </a></li>
+            <li class="sortMenuOptions"><a> Number Ascendant </a></li>
+            <li class="sortMenuOptions"><a> Number Descendant </a></li>
+          </ul>
+        <li id="pokestatsButton">PokeStats</li>
+      </ul>
+    </nav>
+    
+    
+    
+    <main>
+      <div class="pokemon">Tarjeta 1</div>
+      <div class="pokemon">Tarjeta 2</div>
+      <div class="pokemon">Tarjeta 3</div>
+      <div class="pokemon">Tarjeta 4</div>
+      <div class="pokemon">Tarjeta 5</div>
+      <div class="pokemon">Tarjeta 6</div>
+      <div class="pokemon">Tarjeta 7</div>
+      <div class="pokemon">Tarjeta 8</div>
+      <div class="pokemon">Tarjeta 9</div>
+      <div class="pokemon">Tarjeta 10</div>
+      <div class="pokemon">Tarjeta 11</div>
+      <div class="pokemon">Tarjeta 12</div>
+      <div class="pokemon">Tarjeta 13</div>
+      <div class="pokemon">Tarjeta 14</div>
+      <div class="pokemon">Tarjeta 15</div>
+      <div class="pokemon">Tarjeta 16</div>
 
-      <nav>
-        <ul>
-          <li class="submenu">
-            <a href="">Filter</a>
-            <ul class="children">
-              <li><a href="">Type</a></li>
-              <li><a href="">Spawn Time</a></li>
-              <li><a href="">Weakness</a></li>
-            </ul>
-          </li>
-          
-          <li class="submenu"><a href="">Sort</a>
-            <ul class="children">
-              <li><a href="">A-Z</a></li>
-              <li><a href="">Z-A</a></li>
-              <li><a href="">Number Ascendant</a></li>
-              <li><a href="">Number Descendant</a></li>
-            </ul>         
-          </li>
-          
-          <li><a href="">PokeStats</a></li>
-        </ul>
-      </nav>
-    </div>
+    </main>
+
+    <footer>
+      <p>aquí va el footer</p>
+    </footer>
+
+  </div>
 
 
-  </header>
-
-
-
-  <main>
-    <div class="pokemon">1</div>
-    <div class="pokemon">2</div>
-    <div class="pokemon">3</div>
-    <div class="pokemon">4</div>
-    <div class="pokemon">5</div>
-    <div class="pokemon">6</div>
-    <div class="pokemon">7</div>
-    <div class="pokemon">8</div>
-  </main>
-  <footer>
-
-  </footer>
-
-  <!-- <script src="main.js" type="module"></script>-->
-
+  <script src="main.js"></script>
 </body>
 
 </html>
