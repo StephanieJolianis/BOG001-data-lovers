@@ -14,7 +14,7 @@
   display: grid;
   grid-template-rows: 10% repeat(3, 5%) 70% 5%;
   grid-template-columns: 1fr repeat(6,2fr) 1fr;
-  grid-gap: 1px;
+  grid-gap: 0px;
   background-color: #77C9F9; 
 }
 
@@ -359,16 +359,7 @@ footer {
     width: 70%;
   }
 
-  .pikachu{
-    width: 30%;
-    height: 8vw;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  .pikachu img{
-    height: 14vw;
-  }
+
   
   .menu_bar{
     display: block;
@@ -377,36 +368,38 @@ footer {
     background-color: #F7C900;
   }
 
-    .imgPokemon{
-      height: 80px;
-      width: 80px;
-    }
-
-
-    .pokemon{
-      max-height: 165px;
-      min-width: 130px;
-      margin: 0.5em;
-    }
-
-    main{
-      background-size: cover;
-    }
-
-    #container{
-      width:90%;
-      flex-direction: row;
-    }
-
-    .name{
-      font-size: medium;
-    }
-    
-    .num{
-      font-size: medium;
-    }
-
+  .imgPokemon{
+    height: 50px;
+    width: 50px;
   }
+
+
+  .pokemon{
+    max-height: 50px;
+    max-width: 50px;
+    padding: 0;
+    margin: 0.5em;
+  }
+
+  main{
+    background-size: cover;
+  }
+
+  #container{
+    width:90%;
+    flex-direction: row;
+    
+  }
+
+  .name{
+    font-size: medium;
+  }
+  
+  .num{
+    font-size: medium;
+  }
+
+}
 
 
 
@@ -415,28 +408,111 @@ footer {
 
 @media screen and (min-width:800px){
 
-  .logo{
-   height: 10vw;
-  }
-   
-  .mainMenu {
+  .grid {
     display: grid;
-    grid-template-columns: subgrid;
+    grid-template-rows: 2% 10% 5% 5% 5% 5% 63% 5%;
+    grid-template-columns: 14% 8% 8% 8% 24% 8% 8% 8% 14%;
+    grid-gap: 0px;
+    background-color: #77C9F9; 
+  }
+
+  .menuBar{
+    display: none;
+  }
+
+
+  #closeBtn {
+    display:none;
+  }
+  
+  .pokemonDictionary {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    justify-self: center;
+    align-self: center;
+    max-width: 400px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pikachuImage {
     grid-column-start: 2;
-    grid-column-end: 5;
-     
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 3.5vw;
+    
+    
+    justify-self: center;
+    
+  }
+
+  #navMenu{
+    display:block;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    position: relative;
+  }
+  .mainMenu {
+    display: block;
+    justify-content: center;
+    margin-left: 14%;
+    
+    
   } 
 
   .mainMenu li {
-    width: fit-content;
-    height: fit-content;
+    width: 8%;
+    height: 100%;
     padding: 0;
     margin: 0;
+    text-align: center;
     list-style-type: none;
+    border: 2px solid green;
+    display: inline-block;
+    
   }
   
+  .mainMenu li a {
+    padding-top: 10%;
+    margin: 0;
+    text-decoration: none;
+  } 
 
   .sortMenu {
+    display: block;
+    position: absolute;
+
+  }
+
+  .sortMenu li {
+    display: inline-block;
+  }
+ 
+
+
+  #sorButton:hover .sortMenu {
+    display: block;
+    
+  }
+
+  main {
     display: none;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 5;
+    grid-row-end: 8;
+  }
+
+  footer {
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    
   }
 }
