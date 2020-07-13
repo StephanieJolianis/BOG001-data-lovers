@@ -3,7 +3,10 @@ import { data2 } from './data.js';
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click" , openNav);
 document.getElementById("closeBtn").addEventListener("click" , closeNav);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 558d2ad359873471fef634814b0db06a52fd14f8
 function openNav() {
   document.getElementById("navMenu").style.display="block";
 }
