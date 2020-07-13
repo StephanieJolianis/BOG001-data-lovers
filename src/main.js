@@ -1,5 +1,17 @@
 import { data2 } from './data.js';
 
+// Menu Function ---------------------------------------------------------------------------
+document.getElementById("menuBtn").addEventListener("onclick" , openNav);
+
+function openNav() {
+  document.getElementById("navMenu").style.display="block";
+}
+
+function closeNav() {
+  document.getElementById("navMenu").style.display= "none";
+}
+// Menu Function ---------------------------------------------------------------------------
+
 let result = data2();
 let container = document.getElementById("container");
 
@@ -46,15 +58,7 @@ for (let pokemonIndex of result){
 
 
 
-// Menu Function ---------------------------------------------------------------------------
-function openNav() {
-  document.getElementById("navMenu").style.display="block";
-}
 
-function closeNav() {
-  document.getElementById("navMenu").style.display= "none";
-}
-// Menu Function ---------------------------------------------------------------------------
 
 
 
