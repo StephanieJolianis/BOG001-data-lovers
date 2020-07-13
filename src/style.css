@@ -159,8 +159,8 @@ footer {
   padding: 0;
   display:flex;
   flex-direction: column;
-  max-height: 215px;
-  min-width: 185px;
+  max-height: 230px;
+  min-width: 220px;
   margin:2em;
   overflow: hidden;
   box-shadow: 2px 4px 10px#2D4C8F;
@@ -269,7 +269,7 @@ footer {
  .Ground{
   color: #2D4C8F;
   font-weight: 600;
-  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  background: linear-gradient(180deg, #f7de3f, #ab9842);
   text-align: center;
   padding-top: 0.3vw;
   padding-bottom: 0.3vw;
@@ -329,7 +329,7 @@ footer {
  .Dragon{
   color: #2D4C8F;
   font-weight: 600;
-  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  background: linear-gradient(180deg, #53a4cf, #f16e57);
   text-align: center;
   padding-top: 0.3vw;
   padding-bottom: 0.3vw;
@@ -339,7 +339,7 @@ footer {
  .Flying{
   color: #2D4C8F;
   font-weight: 600;
-  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  background: linear-gradient(180deg, #3dc7ef , #bdb9b8 );
   text-align: center;
   padding-top: 0.3vw;
   padding-bottom: 0.3vw;
