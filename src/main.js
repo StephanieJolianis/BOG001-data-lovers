@@ -1,7 +1,8 @@
 import { data2 } from './data.js';
 
 // Menu Function ---------------------------------------------------------------------------
-document.getElementById("menuBtn").addEventListener("onclick" , openNav);
+document.getElementById("menuBtn").addEventListener("click" , openNav);
+document.getElementById("closeBtn").addEventListener("click" , closeNav);
 
 function openNav() {
   document.getElementById("navMenu").style.display="block";
