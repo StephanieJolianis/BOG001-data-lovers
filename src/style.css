@@ -106,6 +106,7 @@
 }
 
 
+
 main{
   background-image: url(imagenes/background2.jpg);
   background-color: blue;
@@ -132,7 +133,6 @@ main{
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-
 footer {
   grid-column-start: 1;
   grid-column-end: 9;
@@ -140,7 +140,6 @@ footer {
   grid-row-end: 7;
   background-color: #F7C900;
 }
-
 
 .pokemon{
   background: #FFFFFF;
