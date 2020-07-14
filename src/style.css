@@ -34,8 +34,7 @@
   grid-row-start: 2;
   grid-row-end: 3;
   width: 10vw;
-  justify-self: center;
-  
+  justify-self: center;  
 }
 
 .menuBar {
@@ -420,19 +419,21 @@ footer {
     grid-row-end: 4;
     justify-self: center;
     align-self: center;
-    max-width: 400px;
+    max-width: 350px;
     padding: 0;
     margin: 0;
   }
   
   .pikachuImage {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    /*grid-column-start: 2;
+    grid-column-end: 3;*/
     grid-row-start: 3;
     grid-row-end: 4;
-    width: 3.5vw;
+    max-width: 50px;
     justify-self: center;
+    display: none;
   }
+
 
   #navMenu{
     display:block;
@@ -449,21 +450,39 @@ footer {
     margin-left: 14%;
   } 
 
+  
+
   .mainMenu li {
     width: 8%;
     height: 100%;
     padding: 0;
     margin: 0;
+    margin-left: -4px;
     text-align: center;
     list-style-type: none;
     /*border: 2px solid green;*/
     display: inline-block;
+  }
+
+  .mainMenu li:hover {
+    color: red;
+  }
+
+  
+  
+
+
+  #sortButton:hover .pikachuImage {
+    grid-column-start: 3;
+    grid-column-end: 4;
   }
   
   .mainMenu li a {
     padding-top: 10%;
     margin: 0;
     text-decoration: none;
+    color: #2D4C8F;
+
   } 
 
   .sortMenu {
@@ -475,9 +494,7 @@ footer {
     display: inline-block;
   }
  
-  /*#sorButton:hover .sortMenu {
-    display: block;
-  }*/
+ 
 
   main {
     grid-column-start: 1;

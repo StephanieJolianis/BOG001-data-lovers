@@ -27,6 +27,44 @@ function openSort(){
 
 // Menu Function ---------------------------------------------------------------------------
 
+// Pikachu Function ---------------------------------------------------------------------------
+
+var screenWidth = window.matchMedia("(min-width: 800px)");
+var pikachuOnFilter = () => {
+  document.getElementById("pikachu").style.display="block";
+  document.getElementById("pikachu").style.gridColumnStart=2;
+  document.getElementById("pikachu").style.gridColumnEnd=3;
+  console.log("sí lee la función pikachuOnFilter")
+}
+
+var pikachuOnSort = () => {
+  document.getElementById("pikachu").style.display="block";
+  document.getElementById("pikachu").style.gridColumnStart=3;
+  document.getElementById("pikachu").style.gridColumnEnd=4;
+  console.log("sí lee la función pikachuOnSort")
+}
+
+var pikachuOnStats = () => {
+  document.getElementById("pikachu").style.display="block";
+  document.getElementById("pikachu").style.gridColumnStart=4;
+  document.getElementById("pikachu").style.gridColumnEnd=5;
+  console.log("sí lee la función pikachuOnSort")
+}
+
+
+if (screenWidth.matches) {
+
+  document.getElementById("sortButton").addEventListener("mouseover", pikachuOnSort);
+  document.getElementById("filterButton").addEventListener("mouseover", pikachuOnFilter);
+  document.getElementById("pokestatsButton").addEventListener("mouseover", pikachuOnStats);
+} else {
+  document.getElementById("pikachu").style.gridColumnStart=2;
+  document.getElementById("pikachu").style.gridColumnEnd=3;
+}
+
+
+// Pikachu Function ---------------------------------------------------------------------------
+
 let result = data2();
 let container = document.getElementById("container");
 
