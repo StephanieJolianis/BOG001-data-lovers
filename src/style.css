@@ -359,25 +359,20 @@ footer {
     width: 70%;
   }
 
-
-  
   .menu_bar{
     display: block;
     width: 100%;
-    position: fixed;
     background-color: #F7C900;
   }
 
   .imgPokemon{
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
   }
 
-
   .pokemon{
-    max-height: 50px;
-    max-width: 50px;
-    padding: 0;
+    max-height: 140px;
+    min-width: 140px;
     margin: 0.5em;
   }
 
@@ -386,6 +381,7 @@ footer {
   }
 
   #container{
+    display: flex;
     width:90%;
     flex-direction: row;
     
@@ -443,10 +439,7 @@ footer {
     grid-row-start: 3;
     grid-row-end: 4;
     width: 3.5vw;
-    
-    
     justify-self: center;
-    
   }
 
   #navMenu{
@@ -457,12 +450,11 @@ footer {
     grid-row-end: 5;
     position: relative;
   }
+  
   .mainMenu {
     display: block;
     justify-content: center;
     margin-left: 14%;
-    
-    
   } 
 
   .mainMenu li {
@@ -472,9 +464,8 @@ footer {
     margin: 0;
     text-align: center;
     list-style-type: none;
-    border: 2px solid green;
+    /*border: 2px solid green;*/
     display: inline-block;
-    
   }
   
   .mainMenu li a {
@@ -484,24 +475,19 @@ footer {
   } 
 
   .sortMenu {
-    display: block;
+    display: none;
     position: absolute;
-
   }
 
   .sortMenu li {
     display: inline-block;
   }
  
-
-
-  #sorButton:hover .sortMenu {
+  /*#sorButton:hover .sortMenu {
     display: block;
-    
-  }
+  }*/
 
   main {
-    /*display: none;*/
     grid-column-start: 1;
     grid-column-end:10;
     grid-row-start: 5;

@@ -10,6 +10,21 @@ function openNav() {
 function closeNav() {
   document.getElementById("navMenu").style.display = "none";
 }
+
+document.getElementById("sortButton").addEventListener("click", openSort);
+function openSort(){
+  let sort = document.getElementById("sort")
+  if (sort.style.display == ""){
+    sort.style.display = "none";
+  }
+
+  if (sort.style.display == "none"){
+    sort.style.display = "block";
+  }else{
+    sort.style.display = "none";
+  }
+}
+
 // Menu Function ---------------------------------------------------------------------------
 
 let result = data2();
