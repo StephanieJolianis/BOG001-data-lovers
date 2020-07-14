@@ -69,7 +69,7 @@
   display: none;
   background-color: #F7C900;
   z-index: 1000;
-  
+  border-bottom: 1px solid #77C9F9;
   grid-column-start: 1;
   grid-column-end: 9;
   grid-row-start: 3;
@@ -83,6 +83,7 @@
 }
 
 .mainMenu li {
+  background-color: #F7C900;
   width: 100%;
   height: 10vw;
   justify-content: center;
@@ -93,6 +94,7 @@
 
 .sortMenu {
   display: inline;
+  background: #FAD224;
 }
 
 .sortMenu li{
@@ -154,6 +156,7 @@ footer {
   overflow: hidden;
   box-shadow: 2px 4px 10px#2D4C8F;
 }
+
 
 .name{
   Font-Family: 'Raleway', Sans-Serif;
@@ -441,12 +444,16 @@ footer {
     grid-row-start: 4;
     grid-row-end: 5;
     position: relative;
+    
   }
   
   .mainMenu {
     display: block;
     justify-content: center;
     margin-left: 14%;
+    border-bottom: none;
+    
+    
   } 
 
   
@@ -461,21 +468,14 @@ footer {
     list-style-type: none;
     /*border: 2px solid green;*/
     display: inline-block;
+    border-bottom: none;
   }
 
   .mainMenu li:hover {
     color: red;
-  }
+  } 
 
-  
-  
-
-
-  #sortButton:hover .pikachuImage {
-    grid-column-start: 3;
-    grid-column-end: 4;
-  }
-  
+   
   .mainMenu li a {
     padding-top: 10%;
     margin: 0;
@@ -487,10 +487,26 @@ footer {
   .sortMenu {
     display: none;
     position: absolute;
+    /*border: 2px solid green;*/
+    background: #FAD224;
+    left: 0;
+    padding: 0 0 0 20%;
+    height: 100%;
+    vertical-align: middle;
+    justify-content: center;
+    margin: 0;
+    border-top: 2px solid #77C9F9;
+    
+    
   }
 
   .sortMenu li {
     display: inline-block;
+    padding:0;
+    margin: 0;
+    /*border: 2px solid green;*/
+    height: 95%;
+    background: none;
   }
  
  
@@ -500,6 +516,7 @@ footer {
     grid-column-end:10;
     grid-row-start: 5;
     grid-row-end: 8;
+    overflow:hidden;
   }
 
   #container::-webkit-scrollbar{
@@ -518,5 +535,9 @@ footer {
     grid-row-start: 8;
     grid-row-end: 9;
     
+  }
+  
+  .pokemon:hover {
+    transform: scale(1.2); 
   }
 }
