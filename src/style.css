@@ -34,8 +34,7 @@
   grid-row-start: 2;
   grid-row-end: 3;
   width: 10vw;
-  justify-self: center;
-  
+  justify-self: center;  
 }
 
 .menuBar {
@@ -359,25 +358,20 @@ footer {
     width: 70%;
   }
 
-
-  
   .menu_bar{
     display: block;
     width: 100%;
-    position: fixed;
     background-color: #F7C900;
   }
 
   .imgPokemon{
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
   }
 
-
   .pokemon{
-    max-height: 50px;
-    max-width: 50px;
-    padding: 0;
+    max-height: 140px;
+    min-width: 140px;
     margin: 0.5em;
   }
 
@@ -386,6 +380,7 @@ footer {
   }
 
   #container{
+    display: flex;
     width:90%;
     flex-direction: row;
     
@@ -432,22 +427,21 @@ footer {
     grid-row-end: 4;
     justify-self: center;
     align-self: center;
-    max-width: 400px;
+    max-width: 350px;
     padding: 0;
     margin: 0;
   }
   
   .pikachuImage {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    /*grid-column-start: 2;
+    grid-column-end: 3;*/
     grid-row-start: 3;
     grid-row-end: 4;
-    width: 3.5vw;
-    
-    
+    max-width: 50px;
     justify-self: center;
-    
+    display: none;
   }
+
 
   #navMenu{
     display:block;
@@ -457,51 +451,60 @@ footer {
     grid-row-end: 5;
     position: relative;
   }
+  
   .mainMenu {
     display: block;
     justify-content: center;
     margin-left: 14%;
-    
-    
   } 
+
+  
 
   .mainMenu li {
     width: 8%;
     height: 100%;
     padding: 0;
     margin: 0;
+    margin-left: -4px;
     text-align: center;
     list-style-type: none;
-    border: 2px solid green;
+    /*border: 2px solid green;*/
     display: inline-block;
-    
+  }
+
+  .mainMenu li:hover {
+    color: red;
+  }
+
+  
+  
+
+
+  #sortButton:hover .pikachuImage {
+    grid-column-start: 3;
+    grid-column-end: 4;
   }
   
   .mainMenu li a {
     padding-top: 10%;
     margin: 0;
     text-decoration: none;
+    color: #2D4C8F;
+
   } 
 
   .sortMenu {
     display: none;
     position: absolute;
-
   }
 
   .sortMenu li {
     display: inline-block;
   }
  
-
-
-  .mainMenu #sortButton a :hover .sortMenu {
-    display: block;
-    
-  }
+ 
 
   main {
-    /*display: none;*/
     grid-column-start: 1;
     grid-column-end:10;
     grid-row-start: 5;
