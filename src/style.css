@@ -134,7 +134,7 @@ main{
   width: 100%;
   display:flex;
   justify-content: center;
-  overflow: hidden;
+  overflow-y: scroll;
   grid-column-start: 1;
   grid-column-end: 9;
   grid-row-start: 4;
@@ -147,10 +147,31 @@ main{
   justify-content: space-around;
   flex-flow: row wrap;
   width: 80%;
-  height: 700px;
-  overflow-y: scroll;
+  height: fit-content;
+  /*overflow-y: scroll;*/
   background-blend-mode: luminosity;
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+#topButton {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Make sure it does not overlap */
+  
+  right: 0;
+  
+
+  /* border: none; 
+  outline: none; 
+  background-color: red;
+  color: white; 
+  cursor: pointer;
+  border-radius: 10px;
+  
+  margin-right: 0; */
 }
 
 footer {
@@ -544,18 +565,32 @@ footer {
     grid-column-end:10;
     grid-row-start: 5;
     grid-row-end: 8;
-    overflow:hidden;
+    /*overflow:hidden;*/
+    overflow-y: scroll;
   }
 
-  #container::-webkit-scrollbar{
+  main::-webkit-scrollbar{
     width: 7px;
   }
   
-  #container::-webkit-scrollbar-thumb{
+  main::-webkit-scrollbar-thumb{
     background-color: #2D4C8F;
     border-radius: 5px;
   }
   
+  #topButton {
+    grid-column-start: 9;
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    width: 60px;
+    height: 60px;
+    margin-top: 50vh;
+    margin-left: 30%;
+
+    
+    
+  }
 
   footer {
     grid-column-start: 1;
