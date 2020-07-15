@@ -124,6 +124,7 @@
 }
 
 
+
 main{
   background-image: url(imagenes/background2.jpg);
   background-color: blue;
@@ -150,15 +151,6 @@ main{
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-#container::-webkit-scrollbar{
-  width: 7px;
-}
-
-#container::-webkit-scrollbar-thumb{
-  background-color: #2D4C8F;
-  border-radius: 5px;
-}
-
 footer {
   grid-column-start: 1;
   grid-column-end: 9;
@@ -169,7 +161,6 @@ footer {
   margin: 0;
 
 }
-
 
 .pokemon{
   background: #FFFFFF;
@@ -406,7 +397,6 @@ footer {
     display: flex;
     width:90%;
     flex-direction: row;
-    
   }
 
   .name{
@@ -553,6 +543,16 @@ footer {
     grid-row-end: 8;
     overflow:hidden;
   }
+
+  #container::-webkit-scrollbar{
+    width: 7px;
+  }
+  
+  #container::-webkit-scrollbar-thumb{
+    background-color: #2D4C8F;
+    border-radius: 5px;
+  }
+  
 
   footer {
     grid-column-start: 1;
