@@ -13,11 +13,31 @@ describe('data2 es una función', () => {
     expect(typeof returns).toBe('object');
   });
 
-
   it('data2 valida propiedades de object', () => {
     let returns= data2();
     expect(returns[0]).toHaveProperty("num");
   });
+
+  it('Cada objeto de data2 debe tener la propiedad "name"', () => {
+    let returns= data2();
+    expect(returns[0]).toHaveProperty("name");
+  });
+  
+  it('Cada objeto de data2 debe tener la propiedad "type"', () => {
+    let returns= data2();
+    expect(returns[0]).toHaveProperty("type");
+  });
+
+  it('Cada objeto de data2 debe tener la propiedad "img"', () => {
+    let returns= data2();
+    expect(returns[0]).toHaveProperty("img");
+  });
+
+  it('data2 debe retornar un array con 151 objetos', () => {
+    let returns= data2();
+    expect(returns).toHaveLength(151);
+  });
+
 
 });
 
