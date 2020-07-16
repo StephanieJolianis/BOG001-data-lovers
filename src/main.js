@@ -1,6 +1,6 @@
 import { data2 } from './data.js';
 import {filterFunction} from './data.js';
-
+import {sortAzAsc} from './data.js';
 
 
 // Menu Function ---------------------------------------------------------------------------
@@ -87,10 +87,10 @@ topButton.addEventListener("click", topFunction);
 
 // To top function ------------------------------------------------------------------------------
 
-
-let result = data2();
-let container = document.getElementById("container");
-
+const createPokemons = (result) => {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+}
 for (let pokemonIndex of result) {
 
   let pokemon = document.createElement("div");
@@ -143,9 +143,10 @@ for (let pokemonIndex of result) {
 
   container.appendChild(pokemon);
 }
-
-
-
+}
+let result = data2();
+let container = document.getElementById("container");
+createPokemons(result);
 
 // Filter function implementation -----------------------------------------------
 var cath="type";
@@ -153,9 +154,14 @@ var subcath="Psychic";
 var b=filterFunction(result, cath, subcath);
 // Filter function implementation -----------------------------------------------
 
-
-
-
+// sortListAzAsc function implementation ----------------------------------------
+const sortListAzAsc = () => {
+ let dataPokemon = result;
+ dataPokemon.sort(sortAzAsc);
+ createPokemons(dataPokemon);
+}
+document.getElementById("Az").addEventListener("click", sortListAzAsc);
+// sortListAzAsc function implementation ----------------------------------------
 
 
 

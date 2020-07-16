@@ -62,7 +62,7 @@ const mockData=[{
     ]
   }];
 
-describe('filterFunction es una función para filtrar por type' ()=>{
+describe('filterFunction es una función para filtrar por type', ()=>{
 
   it('is a function', ()=> {
     expect(typeof filterFunction).toBe('function');

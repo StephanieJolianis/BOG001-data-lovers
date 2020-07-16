@@ -21,3 +21,15 @@ export const filterFunction = (dataBase, cath, subcath) => {
   var a=dataBase.filter(item => item[cath].includes(subcath));   
   return a;
  };
+
+
+ export const sortAzAsc = (a,b) => {
+   if (a.name > b.name) {
+    return 1;
+  }else if(a.name === b.name){
+    return 0;
+  }else{
+    return -1;
+  }
+ };
+ 
