@@ -13,7 +13,7 @@ describe('data2 es una función', () => {
     expect(typeof returns).toBe('object');
   });
 
-  it('data2 valida propiedades de object', () => {
+  it('Cada objeto de data2 debe tener la propiedad "num"', () => {
     let returns= data2();
     expect(returns[0]).toHaveProperty("num");
   });
