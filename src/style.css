@@ -151,27 +151,33 @@ main{
   /*overflow-y: scroll;*/
   background-blend-mode: luminosity;
   background-color: rgba(255, 255, 255, 0.3);
+
 }
 
 #topButton {
   grid-column-start: 7;
   grid-column-end: 9;
-  grid-row-start: 6;
-  grid-row-end: 7;
-  display: none; /* Hidden by default */
-  z-index: 1000; /* Make sure it does not overlap */
-  
-  right: 0;
-  
+  grid-row-start: 5;
+  grid-row-end: 6;
+  display: grid;
+  grid-template-rows: 10fr;
+  grid-template-columns: 3fr; 
+  z-index: 1000; 
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+}
 
-  /* border: none; 
-  outline: none; 
-  background-color: red;
-  color: white; 
-  cursor: pointer;
-  border-radius: 10px;
-  
-  margin-right: 0; */
+#topButtonImg {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  display: none;
+  height: 50px;
+  width: 50px;
+
 }
 
 footer {
