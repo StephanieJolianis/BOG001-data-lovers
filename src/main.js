@@ -1,4 +1,6 @@
 import { data2 } from './data.js';
+import {filterFunction} from './data.js';
+
 
 
 // Menu Function ---------------------------------------------------------------------------
@@ -145,8 +147,11 @@ for (let pokemonIndex of result) {
 
 
 
-
-
+// Filter function implementation -----------------------------------------------
+var cath="type";
+var subcath="Psychic";
+var b=filterFunction(result, cath, subcath);
+// Filter function implementation -----------------------------------------------
 
 
 

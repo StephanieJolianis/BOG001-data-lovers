@@ -16,6 +16,8 @@ export const data2 = () => {
   return myArray;
 };
 
-// export const filterFunction = (property, value) => {
-//   return property.value==
-// };
+
+export const filterFunction = (dataBase, cath, subcath) => {
+  var a=dataBase.filter(item => item[cath].includes(subcath));   
+  return a;
+ };
