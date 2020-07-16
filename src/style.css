@@ -177,9 +177,14 @@ main{
   display: none;
   height: 50px;
   width: 50px;
-  opacity:0.2;
+  opacity:0.7;
 
 }
+
+#topButtonImg:hover {
+  opacity:1;
+}
+
 
 footer {
   grid-column-start: 1;
