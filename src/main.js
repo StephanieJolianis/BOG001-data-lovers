@@ -60,7 +60,6 @@ var pikachuOnStats = () => {
 
 
 if (screenWidth.matches) {
-
   document.getElementById("sortButton").addEventListener("mouseover", pikachuOnSort);
   document.getElementById("filterButton").addEventListener("mouseover", pikachuOnFilter);
   document.getElementById("pokestatsButton").addEventListener("mouseover", pikachuOnStats);
@@ -68,9 +67,32 @@ if (screenWidth.matches) {
   document.getElementById("pikachu").style.gridColumnStart=2;
   document.getElementById("pikachu").style.gridColumnEnd=3;
 }
-
-
 // Pikachu Function ---------------------------------------------------------------------------
+
+// To top function ------------------------------------------------------------------------------
+
+var topButton = document.getElementById("topButton");
+var main=document.getElementsByTagName("main")[0];
+
+const showToTopButton = () => {
+  
+  if (main.scrollTop > 200){
+    topButton.style.display = "block";
+  } else {
+    topButton.style.display = "none";
+  }
+}
+
+const topFunction= () => {
+   main.scrollTop = 0;
+   
+}
+
+main.addEventListener("scroll", showToTopButton);
+topButton.addEventListener("click", topFunction);
+
+// To top function ------------------------------------------------------------------------------
+
 
 let result = data2();
 let container = document.getElementById("container");
@@ -127,6 +149,7 @@ for (let pokemonIndex of result) {
 
   container.appendChild(pokemon);
 }
+
 
 
 
