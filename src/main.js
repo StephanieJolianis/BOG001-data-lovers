@@ -71,7 +71,7 @@ if (screenWidth.matches) {
 
 // To top function ------------------------------------------------------------------------------
 
-var topButton = document.getElementById("topButton");
+var topButton = document.getElementById("topButtonImg");
 var main=document.getElementsByTagName("main")[0];
 
 const showToTopButton = () => {
