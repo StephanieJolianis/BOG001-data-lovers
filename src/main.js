@@ -1,7 +1,9 @@
 import { data2 } from './data.js';
 import {filterFunction} from './data.js';
 import {sortAzAsc} from './data.js';
-
+import {sortZaDesc} from './data.js';
+import {sortNumAsc} from './data.js';
+import {sortNumDesc} from './data.js';
 
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
@@ -155,22 +157,36 @@ var b=filterFunction(result, cath, subcath);
 // Filter function implementation -----------------------------------------------
 
 // sortListAzAsc function implementation ----------------------------------------
+let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
- let dataPokemon = result;
- dataPokemon.sort(sortAzAsc);
- createPokemons(dataPokemon);
+ createPokemons(sortListAz);
 }
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
 // sortListAzAsc function implementation ----------------------------------------
 
+// sortListZaDesc function implementation ---------------------------------------
+let sortListZa = sortZaDesc();
+const sortListZaDesc = () => {
+ createPokemons(sortListZa);
+}
+document.getElementById("Za").addEventListener("click", sortListZaDesc);
+// sortListZaDesc function implementation ---------------------------------------
 
+// sortListNumAsc function implementation ---------------------------------------
+let sortNum1 = sortNumAsc();
+const sortListNumAsc = () => {
+ createPokemons(sortNum1);
+}
+document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
+// sortListNumAsc function implementation ---------------------------------------
 
-
-
-
-
-
-
+// sortListNumDesc function implementation --------------------------------------
+let sortNum2 = sortNumDesc();
+const sortListNumDesc = () => {
+ createPokemons(sortNum2);
+}
+document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
+// sortListNumDesc function implementation --------------------------------------
 
 
 
