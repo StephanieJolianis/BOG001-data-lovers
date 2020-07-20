@@ -79,7 +79,7 @@
   grid-column-end: 9;
   grid-row-start: 3;
   grid-row-end: 6;
-  
+  overflow-y:scroll;
   margin: 0;
   padding-top: 20px;
 
@@ -106,14 +106,16 @@
 
 }
 
-.sortMenu {
-  display: inline;
+.typeMenu, .weaknessMenu, .sortMenu {
+  /*display: inline;*/
   background: #FAD224;
   Font-Family: 'Raleway', Sans-Serif;
+  overflow-y: scroll;
+  height:40vw;
   
 }
 
-.sortMenu li{
+.typeMenu li, .weaknessMenu li, .sortMenu li{
   
   background: #FAD224;
   border-bottom: 1px solid #77C9F9;
@@ -124,6 +126,11 @@
   color: #2D4C8F;
   font-size: medium;
 }
+
+
+
+
+
 
 
 

@@ -56,7 +56,7 @@ var pikachuOnStats = () => {
 
 if (screenWidth.matches) {
   document.getElementById("sortButton").addEventListener("mouseover", pikachuOnSort);
-  document.getElementById("filterButton").addEventListener("mouseover", pikachuOnFilter);
+  document.getElementById("typeButton").addEventListener("mouseover", pikachuOnFilter);
   document.getElementById("pokestatsButton").addEventListener("mouseover", pikachuOnStats);
   
 } else {
@@ -154,6 +154,7 @@ createPokemons(result);
 var cath="type";
 var subcath="Psychic";
 var b=filterFunction(result, cath, subcath);
+
 // Filter function implementation -----------------------------------------------
 
 // sortListAzAsc function implementation ----------------------------------------
