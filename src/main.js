@@ -195,6 +195,7 @@ document.getElementById("weaknessMenu").addEventListener("click", showWeakFilter
 let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
  createPokemons(sortListAz);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
 // sortListAzAsc function implementation ----------------------------------------
@@ -203,6 +204,7 @@ document.getElementById("Az").addEventListener("click", sortListAzAsc);
 let sortListZa = sortZaDesc();
 const sortListZaDesc = () => {
  createPokemons(sortListZa);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
 // sortListZaDesc function implementation ---------------------------------------
@@ -211,6 +213,7 @@ document.getElementById("Za").addEventListener("click", sortListZaDesc);
 let sortNum1 = sortNumAsc();
 const sortListNumAsc = () => {
  createPokemons(sortNum1);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 // sortListNumAsc function implementation ---------------------------------------
@@ -219,6 +222,7 @@ document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 let sortNum2 = sortNumDesc();
 const sortListNumDesc = () => {
  createPokemons(sortNum2);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation --------------------------------------
