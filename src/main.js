@@ -1,9 +1,10 @@
-import { data2 } from './data.js';
+import { data2, detailCardPokemon } from './data.js';
 import { filterFunction } from './data.js';
 import { sortAzAsc } from './data.js';
 import { sortZaDesc } from './data.js';
 import { sortNumAsc } from './data.js';
 import { sortNumDesc } from './data.js';
+import { findData } from './data.js';
 
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
@@ -87,8 +88,9 @@ topButton.addEventListener("click", topFunction);
 // To top function ------------------------------------------------------------------------------
 
 // Funcion de crear detalle del pokemon ---------------------------------------------------------
+
 function createDetailPokemon(numPokemon) {
-  console.log("este es el numero del pokemon" + numPokemon);
+  let callingFind = detailCardPokemon(numPokemon);
 }
 // Funcion de crear detalle del pokemon ---------------------------------------------------------
 
