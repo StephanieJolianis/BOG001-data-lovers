@@ -504,7 +504,7 @@ footer {
   .grid {
     display: grid;
     grid-template-rows: 2% 10% 5% 5% 5% 5% 63% 5%;
-    grid-template-columns: 14% 8% 8% 8% 24% 8% 8% 8% 14%;
+    grid-template-columns: 14% 8% 8% 8% 8% 16% 8% 8% 8% 14%;
     grid-gap: 0px;
     background-color: #77C9F9; 
   }
@@ -520,7 +520,7 @@ footer {
   
   .pokemonDictionary {
     grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-end: 7;
     grid-row-start: 2;
     grid-row-end: 4;
     justify-self: center;
@@ -533,8 +533,8 @@ footer {
   .pikachuImage {
     /*grid-column-start: 2;
     grid-column-end: 3;*/
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
     max-width: 50px;
     justify-self: center;
     display: none;
@@ -542,92 +542,101 @@ footer {
 
 
   #navMenu{
-    display:block;
+    display:flex;
+    flex-direction: row;
     grid-column-start: 1;
-    grid-column-end: 10;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    position: relative;
+    grid-column-end: 11;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    height: 100%;
+    overflow: visible;
     padding: 0;
+    margin: 0;
+    justify-content: center;
+    
+    
     
   }
-  
+
   .mainMenu {
-    display: block;
-    justify-content: center;
-    margin-left: 14%;
-    border-bottom: none;
-        
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+    width: 72%;
+   
+    
+    
   } 
 
   
-
+   
   .mainMenu li {
-    width: 8%;
+    
+    
+    width: 11.11%;
     height: 100%;
-    padding: 0;
+    padding: 1vh 0vw;
     margin: 0;
-    margin-left: -4px;
     text-align: center;
+    vertical-align: middle;
+    
     list-style-type: none;
-    /*border: 2px solid green;*/
-    display: inline-block;
+    
+    
     border-bottom: none;
-    padding-top: 0.7%;
+    position: relative;
+    
   }
-
+  
   .mainMenu li:hover {
     color: red;
-  } 
+  }
 
-   
-  .mainMenu li a {
-    padding-top: 10%;
-    margin: 0;
-    text-decoration: none;
-    /*color: #2D4C8F;*/
-
-  } 
-
-  .sortMenu {
+  #typeMenu, #weaknessMenu, .sortMenu {
     display: none;
     position: absolute;
-    /*border: 2px solid green;*/
-    background: #FAD224;
-    left: 0;
-    padding: 0 0 0 18%;
-    height: 100%;
-    /*vertical-align: middle;*/
-    justify-content: center;
-    width: 100%;
+    top: 27%;
+    width: 30%;
+    height: 50%;
+    padding: 0;
     margin: 0;
-    border-top: 2px solid #77C9F9;
-    
-    
+  }
+
+.sortMenu {
+    height: 20%;
+    overflow: hidden;
+  }
+
+  #typeMenu li, #weaknessMenu li, .sortMenu li {
+    height: 10%;
+    width: 100%;
+    padding: 1vh 0vw;
+    margin: 0;
+    border-bottom: 1px solid #77C9F9;
+    text-align: center;
+    vertical-align: middle;
     
   }
 
   .sortMenu li {
-    display: inline-block;
-    padding-left: 0;
-    padding-top: 1%;
-    justify-content: unset;
-    margin: 0;
-    height: 95%;
-    background: none;
-    width: 19%;   
+    height: 25%;
   }
- 
- .sortMenu li a {
-   width: 100%;
- }
 
+  
+ 
+
+
+
+   
+
+
+  
   main {
     grid-column-start: 1;
-    grid-column-end:10;
-    grid-row-start: 5;
+    grid-column-end:11;
+    grid-row-start: 6;
     grid-row-end: 8;
-    /*overflow:hidden;*/
+    overflow:hidden;
     overflow-y: scroll;
   }
 
@@ -641,8 +650,8 @@ footer {
   }
   
   #topButton {
-    grid-column-start: 9;
-    grid-column-end: 10;
+    grid-column-start: 10;
+    grid-column-end: 11;
     grid-row-start: 7;
     grid-row-end: 8;
     width: 60px;
@@ -656,7 +665,7 @@ footer {
 
   footer {
     grid-column-start: 1;
-    grid-column-end: 10;
+    grid-column-end: 11;
     grid-row-start: 8;
     grid-row-end: 9;
     
