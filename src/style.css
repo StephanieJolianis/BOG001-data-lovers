@@ -106,7 +106,7 @@
 
 }
 
-.typeMenu, .weaknessMenu, .sortMenu {
+#typeMenu, #weaknessMenu, .sortMenu {
   /*display: inline;*/
   background: #FAD224;
   Font-Family: 'Raleway', Sans-Serif;
@@ -115,7 +115,10 @@
   
 }
 
-.typeMenu li, .weaknessMenu li, .sortMenu li{
+
+
+
+#typeMenu li, #weaknessMenu li, .sortMenu li{
   
   background: #FAD224;
   border-bottom: 1px solid #77C9F9;

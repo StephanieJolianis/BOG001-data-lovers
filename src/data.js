@@ -9,12 +9,54 @@ export const data2 = () => {
       num: prueba1.num, 
       name: prueba1.name,
       type: prueba1.type,
-      img: prueba1.img
+      img: prueba1.img,
+      weaknesses:prueba1.weaknesses
     };
     myArray.push(firstObject);
     }
   return myArray;
 };
+
+//-------------------------------------------------------------------------
+
+export const findData = (pokemonFind) => {
+  
+  let detailPokemon = data.pokemon.find (onePokemon => 
+    onePokemon.num === pokemonFind);
+    
+    return detailPokemon;
+  }
+
+export const detailCardPokemon = (numPokemon) => {
+  let startFindData = findData(numPokemon);
+     let myDetailPokemon = {
+        num: startFindData.num, 
+        name: startFindData.name,
+        type: startFindData.type,
+        img: startFindData.img,
+        height: startFindData.height,
+        weight: startFindData.weight,
+        weaknesses: startFindData.weaknesses,
+        evolutions: []
+      }
+
+      let arrayEvolutions = [];
+    if (startFindData.prev_evolution != undefined){
+      arrayEvolutions.concat(startFindData.prev_evolution);
+    }
+    if (startFindData.next_evolution != undefined){
+      arrayEvolutions.concat(startFindData.next_evolution);
+    }
+
+      for (let indice = 0; indice < myDetailPokemon.evolutions; indice ++){
+        let findEvolutions = findData(myDetailPokemon.evolutions[indice].num);
+        myDetailPokemon.evolutions[indice].img = findEvolutions.img
+      }
+     
+    return myDetailPokemon;
+};
+
+
 // data2 function definition -------------------------------------------------
 
 export const filterFunction = (dataBase, cath, subcath) => {

@@ -1,9 +1,10 @@
-import { data2 } from './data.js';
+import { data2, detailCardPokemon } from './data.js';
 import { filterFunction } from './data.js';
 import { sortAzAsc } from './data.js';
 import { sortZaDesc } from './data.js';
 import { sortNumAsc } from './data.js';
 import { sortNumDesc } from './data.js';
+import { findData } from './data.js';
 
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
@@ -90,8 +91,9 @@ topButton.addEventListener("click", topFunction);
 // To top function ------------------------------------------------------------------------------
 
 // Funcion de crear detalle del pokemon ---------------------------------------------------------
+
 function createDetailPokemon(numPokemon) {
-  console.log("este es el numero del pokemon" + numPokemon);
+  let callingFind = detailCardPokemon(numPokemon);
 }
 // Funcion de crear detalle del pokemon ---------------------------------------------------------
 
@@ -166,22 +168,57 @@ const createPokemons = (result) => {
   }
 
 }
-let result = data2();
+
+var result = data2();
 let container = document.getElementById("container");
 createPokemons(result);
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 
-// Filter function implementation ---------------------------------------------------------------
-var cath = "type";
-var subcath = "Psychic";
-var b = filterFunction(result, cath, subcath);
+// Filter function implementation -----------------------------------------------
+const showTypeFilter = () => {
+  var cath="type";
+  var subcath = event.target.innerHTML;
+
+  if (subcath=="All"){
+    createPokemons(result);  
+  } else {
+    var resultTypeFilter=filterFunction(result, cath, subcath);
+    createPokemons(resultTypeFilter);
+  }
+  
+  document.getElementById("navMenu").style.display = "none";
+  
+}
+const showWeakFilter = () => {
+  var cath="weaknesses";
+  var subcath = event.target.innerHTML;
+
+  if (subcath=="All"){
+    createPokemons(result);  
+  } else {
+
+  var resultWeakFilter=filterFunction(result, cath, subcath);
+  createPokemons(resultWeakFilter);
+  }
+  document.getElementById("navMenu").style.display = "none";
+}
+
+document.getElementById("typeMenu").addEventListener("click", showTypeFilter);
+document.getElementById("weaknessMenu").addEventListener("click", showWeakFilter);
+
+
+
+
+
+
 
 // Filter function implementation ---------------------------------------------------------------
 
 // sortListAzAsc function implementation --------------------------------------------------------
 let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
-  createPokemons(sortListAz);
+ createPokemons(sortListAz);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
 // sortListAzAsc function implementation -------------------------------------------------------
@@ -189,7 +226,8 @@ document.getElementById("Az").addEventListener("click", sortListAzAsc);
 // sortListZaDesc function implementation ------------------------------------------------------
 let sortListZa = sortZaDesc();
 const sortListZaDesc = () => {
-  createPokemons(sortListZa);
+ createPokemons(sortListZa);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
 // sortListZaDesc function implementation -----------------------------------------------------
@@ -197,7 +235,8 @@ document.getElementById("Za").addEventListener("click", sortListZaDesc);
 // sortListNumAsc function implementation -----------------------------------------------------
 let sortNum1 = sortNumAsc();
 const sortListNumAsc = () => {
-  createPokemons(sortNum1);
+ createPokemons(sortNum1);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 // sortListNumAsc function implementation -----------------------------------------------------
@@ -205,7 +244,8 @@ document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 // sortListNumDesc function implementation ----------------------------------------------------
 let sortNum2 = sortNumDesc();
 const sortListNumDesc = () => {
-  createPokemons(sortNum2);
+ createPokemons(sortNum2);
+ document.getElementById("navMenu").style.display = "none";
 }
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation ----------------------------------------------------
