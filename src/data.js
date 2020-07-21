@@ -9,7 +9,8 @@ export const data2 = () => {
       num: prueba1.num, 
       name: prueba1.name,
       type: prueba1.type,
-      img: prueba1.img
+      img: prueba1.img,
+      weaknesses:prueba1.weaknesses
     };
     myArray.push(firstObject);
     }

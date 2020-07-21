@@ -146,14 +146,48 @@ for (let pokemonIndex of result) {
   container.appendChild(pokemon);
 }
 }
-let result = data2();
+
+var result = data2();
 let container = document.getElementById("container");
 createPokemons(result);
 
 // Filter function implementation -----------------------------------------------
-var cath="type";
-var subcath="Psychic";
-var b=filterFunction(result, cath, subcath);
+const showTypeFilter = () => {
+  var cath="type";
+  var subcath = event.target.innerHTML;
+
+  if (subcath=="All"){
+    createPokemons(result);  
+  } else {
+    var resultTypeFilter=filterFunction(result, cath, subcath);
+    createPokemons(resultTypeFilter);
+  }
+  
+  document.getElementById("navMenu").style.display = "none";
+  
+}
+const showWeakFilter = () => {
+  var cath="weaknesses";
+  var subcath = event.target.innerHTML;
+
+  if (subcath=="All"){
+    createPokemons(result);  
+  } else {
+
+  var resultWeakFilter=filterFunction(result, cath, subcath);
+  createPokemons(resultWeakFilter);
+  }
+  document.getElementById("navMenu").style.display = "none";
+}
+
+document.getElementById("typeMenu").addEventListener("click", showTypeFilter);
+document.getElementById("weaknessMenu").addEventListener("click", showWeakFilter);
+
+
+
+
+
+
 
 // Filter function implementation -----------------------------------------------
 
