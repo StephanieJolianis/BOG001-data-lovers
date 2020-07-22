@@ -172,28 +172,22 @@ createPokemons(result);
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 
 // Filter function implementation -----------------------------------------------
-
+var initialText="151 pokémons available";
+document.getElementById("pFilter").innerText=initialText;
 
 const showTypeFilter = () => {
   var cath="type";
   var subcath = event.target.innerHTML;
 
   if (subcath=="All"){
-    document.getElementById("pFilter").innerHTML="";
-    document.getElementsByTagName("main")[0].style.gridRowStart = null;
-    document.getElementsByTagName("main")[0].style.gridRowEnd = null;
     createPokemons(result);
+    document.getElementById("pFilter").innerText=initialText;
     } else {
     var resultTypeFilter=filterFunction(result, cath, subcath);
     let nFilter=resultTypeFilter.length;
-    document.getElementById("pFilter").innerHTML=nFilter+" pokémon found";
-    
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowStart = 5:document.getElementsByTagName("main")[0].style.gridRowStart = 7;
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowEnd = 6: document.getElementsByTagName("main")[0].style.gridRowEnd = 8;
+    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
     createPokemons(resultTypeFilter);
-    console.log(nFilter+"pokémon found")
   }  
-  
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none":document.getElementById("typeMenu").style.display="none";
 }    
 
@@ -210,20 +204,17 @@ const showTypeMenu = () => {
 
 
 
+
 const showWeakFilter = () => {
   var cath="weaknesses";
   var subcath = event.target.innerHTML;
   if (subcath=="All"){
-    document.getElementById("pFilter").innerHTML="";
-    document.getElementsByTagName("main")[0].style.gridRowStart = null;
-    document.getElementsByTagName("main")[0].style.gridRowEnd = null;
     createPokemons(result);  
+    document.getElementById("pFilter").innerText=initialText;
   } else {
     let resultWeakFilter=filterFunction(result, cath, subcath);
     let nFilter=resultWeakFilter.length;
-    document.getElementById("pFilter").innerHTML=nFilter+" pokémon found";
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowStart = 5:document.getElementsByTagName("main")[0].style.gridRowStart = 7;
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowEnd = 6: document.getElementsByTagName("main")[0].style.gridRowEnd = 8;
+    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
     createPokemons(resultWeakFilter);
   }
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
