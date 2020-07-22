@@ -485,6 +485,8 @@ footer {
   Font-Family: 'Open Sans', Sans-Serif;
   color: #2D4C8F;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
  }
 
 
