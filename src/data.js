@@ -42,15 +42,24 @@ export const detailCardPokemon = (numPokemon) => {
 
       let arrayEvolutions = [];
     if (startFindData.prev_evolution != undefined){
-      arrayEvolutions.concat(startFindData.prev_evolution);
-    }
-    if (startFindData.next_evolution != undefined){
-      arrayEvolutions.concat(startFindData.next_evolution);
+      arrayEvolutions = arrayEvolutions.concat(startFindData.prev_evolution);
     }
 
-      for (let indice = 0; indice < myDetailPokemon.evolutions; indice ++){
-        let findEvolutions = findData(myDetailPokemon.evolutions[indice].num);
-        myDetailPokemon.evolutions[indice].img = findEvolutions.img
+    arrayEvolutions.push({num:startFindData.num, name:startFindData.name});
+
+    if (startFindData.next_evolution != undefined){
+      arrayEvolutions = arrayEvolutions.concat(startFindData.next_evolution);
+    }
+
+      for (let indice = 0; indice < arrayEvolutions.length; indice ++){
+        let findEvolutions = findData(arrayEvolutions[indice].num);
+        arrayEvolutions[indice].img = findEvolutions.img
+      let detailEvolutions = {
+        num: findEvolutions.num,
+        name: findEvolutions.name,
+        img: findEvolutions.img
+      }
+      myDetailPokemon.evolutions.push(detailEvolutions);
       }
      
     return myDetailPokemon;
