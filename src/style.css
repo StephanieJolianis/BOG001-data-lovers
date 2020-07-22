@@ -133,7 +133,23 @@
 
 
 
+#divFilter {
+  color: #2D4C8F;
+  Font-Family: 'Raleway', Sans-Serif;
+  height: fit-content;
+  width: fit-content;
+  position: absolute;
+  right: 6.5%;
+  top: 21%;
+}
 
+#pFilter {
+  
+ 
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+}
 
 
 
@@ -623,7 +639,23 @@ footer {
   }
 
   
- 
+  #divFilter {
+    color: #2D4C8F;
+    Font-Family: 'Raleway', Sans-Serif;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    right: 10.5%;
+    top: 29%;
+  }
+  
+  #pFilter {
+    
+   
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+  }
 
 
 
