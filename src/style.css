@@ -443,7 +443,49 @@ footer {
   padding-bottom: 0.3vw;
  }
 
+ .containerCard{
+   margin-top: 12px;
+   margin-bottom: 10px;
+   /* opacity: 60%; */
+   background-image: url(imagenes/fondopokemon.jpg);
+  background-color: rgb(141, 218, 241); 
+  background-size: cover;
+  border-radius: 10px;
+  width: 90%;
+  height: 95%;
+ }
 
+ .containerCard h1{
+  Font-Family: 'Open Sans', Sans-Serif;
+  color: #2D4C8F;
+  font-size: 18px;
+  height:18px;
+  padding-top: 20px;
+  text-align: center;
+ }
+ .squirtle{
+ height: 98px;
+ width: 98px;
+ }
+
+ .typeCard{
+   height: 25px;
+   width: 25px;
+   margin: 10px;
+ }
+ 
+ .imgTypeElement{
+  height: 30px;
+  display: flex;
+  justify-content: center;
+ }
+
+ .typeElement{
+  height:14px;
+  Font-Family: 'Open Sans', Sans-Serif;
+  color: #2D4C8F;
+  font-size: 14px;
+ }
 
 
 
