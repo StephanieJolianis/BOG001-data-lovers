@@ -179,28 +179,34 @@ const showTypeFilter = () => {
   var subcath = event.target.innerHTML;
 
   if (subcath=="All"){
-    createPokemons(result);  
-  } else {
+    document.getElementById("pFilter").innerHTML="";
+    document.getElementsByTagName("main")[0].style.gridRowStart = null;
+    document.getElementsByTagName("main")[0].style.gridRowEnd = null;
+    createPokemons(result);
+    } else {
     var resultTypeFilter=filterFunction(result, cath, subcath);
+    let nFilter=resultTypeFilter.length;
+    document.getElementById("pFilter").innerHTML=nFilter+" pokémon found";
+    
+    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowStart = 5:document.getElementsByTagName("main")[0].style.gridRowStart = 7;
+    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowEnd = 6: document.getElementsByTagName("main")[0].style.gridRowEnd = 8;
     createPokemons(resultTypeFilter);
-  }
-
+    console.log(nFilter+"pokémon found")
+  }  
+  
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none":document.getElementById("typeMenu").style.display="none";
 }    
 
 const showTypeMenu = () => {
 
   if(screenWidthDesk.matches){
-    document.getElementById("typeMenu").style.display=="none"? document.getElementById("typeMenu").style.display="block":document.getElementById("typeMenu").style.display="none";
+    var displayMenu=document.getElementById("typeMenu");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
+    
     document.getElementById("weaknessMenu").style.display="none";
     document.getElementById("sort").style.display="none";
-    console.log("prueba")
   }
 }
-
-
-
-
 
 
 
@@ -208,16 +214,26 @@ const showWeakFilter = () => {
   var cath="weaknesses";
   var subcath = event.target.innerHTML;
   if (subcath=="All"){
-      createPokemons(result);  
-  } else {var resultWeakFilter=filterFunction(result, cath, subcath);
-  createPokemons(resultWeakFilter);
+    document.getElementById("pFilter").innerHTML="";
+    document.getElementsByTagName("main")[0].style.gridRowStart = null;
+    document.getElementsByTagName("main")[0].style.gridRowEnd = null;
+    createPokemons(result);  
+  } else {
+    let resultWeakFilter=filterFunction(result, cath, subcath);
+    let nFilter=resultWeakFilter.length;
+    document.getElementById("pFilter").innerHTML=nFilter+" pokémon found";
+    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowStart = 5:document.getElementsByTagName("main")[0].style.gridRowStart = 7;
+    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowEnd = 6: document.getElementsByTagName("main")[0].style.gridRowEnd = 8;
+    createPokemons(resultWeakFilter);
   }
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
 }
 
 const showWeaknessMenu = () => {
   if(screenWidthDesk.matches){
-    document.getElementById("weaknessMenu").style.display=="none" ? document.getElementById("weaknessMenu").style.display="block": document.getElementById("weaknessMenu").style.display="none";
+    var displayMenu=document.getElementById("weaknessMenu");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
+
     document.getElementById("typeMenu").style.display="none";
     document.getElementById("sort").style.display="none";
   }
@@ -225,35 +241,21 @@ const showWeaknessMenu = () => {
 
 
 const showSortMenu = () => {
-
   if(screenWidthDesk.matches){
+   
+    let displayMenu=document.getElementById("sort");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
     
-    if(document.getElementById("sort").style.display=="none")
-    {
-      document.getElementById("sort").style.display="block";
-      console.log("abre")
-    }else {
-      document.getElementById("sort").style.display="none";
-      console.log("cierra")
-    }
     document.getElementById("typeMenu").style.display="none";
     document.getElementById("weaknessMenu").style.display="none";
-    console.log("prueba")
   }
 }
-
-
 
 document.getElementById("typeMenu").addEventListener("click", showTypeFilter);
 document.getElementById("typeButton").addEventListener("click", showTypeMenu);
 document.getElementById("weaknessMenu").addEventListener("click", showWeakFilter);
 document.getElementById("weaknessButton").addEventListener("click", showWeaknessMenu);
-//document.getElementById("sortMenu").addEventListener("click", showSort);
 document.getElementById("sortButton").addEventListener("click", showSortMenu);
-
-
-
-
 
 // Filter function implementation ---------------------------------------------------------------
 
@@ -261,13 +263,9 @@ document.getElementById("sortButton").addEventListener("click", showSortMenu);
 let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
  createPokemons(sortListAz);
- if(screenWidthMobile.matches) {
-  document.getElementById("navMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
 }
-if(screenWidthDesk.matches) {
-  document.getElementById("sort").style.display="none";
-}
-}
+
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
 // sortListAzAsc function implementation -------------------------------------------------------
 
@@ -275,11 +273,7 @@ document.getElementById("Az").addEventListener("click", sortListAzAsc);
 let sortListZa = sortZaDesc();
 const sortListZaDesc = () => {
  createPokemons(sortListZa);
- if(screenWidthMobile.matches) {
-  document.getElementById("navMenu").style.display="none";
-}
-if(screenWidthDesk.matches) {
-  document.getElementById("sort").style.display="none";}
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
 }
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
 // sortListZaDesc function implementation -----------------------------------------------------
@@ -288,11 +282,7 @@ document.getElementById("Za").addEventListener("click", sortListZaDesc);
 let sortNum1 = sortNumAsc();
 const sortListNumAsc = () => {
  createPokemons(sortNum1);
- if(screenWidthMobile.matches) {
-  document.getElementById("navMenu").style.display="none";
-}
-if(screenWidthDesk.matches) {
-  document.getElementById("sort").style.display="none";}
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
 }
 document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 // sortListNumAsc function implementation -----------------------------------------------------
@@ -301,11 +291,7 @@ document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 let sortNum2 = sortNumDesc();
 const sortListNumDesc = () => {
  createPokemons(sortNum2);
- if(screenWidthMobile.matches) {
-  document.getElementById("navMenu").style.display="none";
-}
-if(screenWidthDesk.matches) {
-  document.getElementById("sort").style.display="none";}
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
 }
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation ----------------------------------------------------
