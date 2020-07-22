@@ -184,28 +184,14 @@ const showTypeFilter = () => {
     var resultTypeFilter=filterFunction(result, cath, subcath);
     createPokemons(resultTypeFilter);
   }
-  
-  if(screenWidthMobile.matches) {
-    document.getElementById("navMenu").style.display="none";
-  }
-  if(screenWidthDesk.matches) {
-    document.getElementById("typeMenu").style.display="none";
-  }
 
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none":document.getElementById("typeMenu").style.display="none";
 }    
 
 const showTypeMenu = () => {
 
   if(screenWidthDesk.matches){
-    
-    if(document.getElementById("typeMenu").style.display=="none")
-    {
-      document.getElementById("typeMenu").style.display="block";
-      console.log("abre")
-    }else {
-      document.getElementById("typeMenu").style.display="none";
-      console.log("cierra")
-    }
+    document.getElementById("typeMenu").style.display=="none"? document.getElementById("typeMenu").style.display="block":document.getElementById("typeMenu").style.display="none";
     document.getElementById("weaknessMenu").style.display="none";
     document.getElementById("sort").style.display="none";
     console.log("prueba")
@@ -221,41 +207,19 @@ const showTypeMenu = () => {
 const showWeakFilter = () => {
   var cath="weaknesses";
   var subcath = event.target.innerHTML;
-
   if (subcath=="All"){
-    createPokemons(result);  
-  } else {
-
-  var resultWeakFilter=filterFunction(result, cath, subcath);
+      createPokemons(result);  
+  } else {var resultWeakFilter=filterFunction(result, cath, subcath);
   createPokemons(resultWeakFilter);
   }
-  
-  if(screenWidthMobile.matches) {
-    document.getElementById("navMenu").style.display="none";
-  }
-  if(screenWidthDesk.matches) {
-    document.getElementById("weaknessMenu").style.display="none";
-  }
-  
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
 }
 
-
-
 const showWeaknessMenu = () => {
-
   if(screenWidthDesk.matches){
-    
-    if(document.getElementById("weaknessMenu").style.display=="none")
-    {
-      document.getElementById("weaknessMenu").style.display="block";
-      console.log("abre")
-    }else {
-      document.getElementById("weaknessMenu").style.display="none";
-      console.log("cierra")
-    }
+    document.getElementById("weaknessMenu").style.display=="none" ? document.getElementById("weaknessMenu").style.display="block": document.getElementById("weaknessMenu").style.display="none";
     document.getElementById("typeMenu").style.display="none";
     document.getElementById("sort").style.display="none";
-    console.log("prueba")
   }
 }
 
