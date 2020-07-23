@@ -4,6 +4,7 @@ import { sortAzAsc } from './data.js';
 import { sortZaDesc } from './data.js';
 import { sortNumAsc } from './data.js';
 import { sortNumDesc } from './data.js';
+import { findData2 } from './data.js';
 
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
@@ -15,7 +16,6 @@ function openNav() {
 function closeNav() {
   document.getElementById("navMenu").style.display = "none";
 }
-
 
 // Menu Function ------------------------------------------------------------------------------
 
@@ -55,8 +55,7 @@ if (screenWidthDesk.matches) {
   document.getElementById("weaknessButton").addEventListener("mouseover", pikachuOnWeakness);
   document.getElementById("sortButton").addEventListener("mouseover", pikachuOnSort);
   document.getElementById("pokestatsButton").addEventListener("mouseover", pikachuOnStats);
-
-} else {
+  } else {
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
@@ -287,7 +286,18 @@ const sortListNumDesc = () => {
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation ----------------------------------------------------
 
+// Search Bar Function:
+var searchInput=document.getElementById("searchInput");
 
+const searchFunction = () => {
+ var searchArray=findData2(searchInput.value);
+
+ console.log(typeof(searchArray))
+
+ createPokemons(searchArray);
+}
+
+searchInput.addEventListener("keyup", searchFunction);
 
 
 

@@ -19,12 +19,23 @@ export const data2 = () => {
 
 //-------------------------------------------------------------------------
 
+
+
+
 export const findData = (pokemonFind) => {
-  
+   
   let detailPokemon = data.pokemon.find (onePokemon => 
     onePokemon.num === pokemonFind);
-    
+
     return detailPokemon;
+  }
+
+
+export const findData2 = (toFind) => {
+  let detailPokemon = data.pokemon.filter (onePokemon => 
+    (onePokemon.num.includes(toFind) || onePokemon.name.toUpperCase().includes(toFind.toUpperCase())));
+  return detailPokemon;
+  
   }
 
 export const detailCardPokemon = (numPokemon) => {
