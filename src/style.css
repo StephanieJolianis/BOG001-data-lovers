@@ -469,6 +469,8 @@ footer {
   border-radius: 10px;
   width: 90%;
   height: 95%;
+  display: flex;
+  flex-direction: column;
  }
 
  .containerCard h1{
@@ -487,7 +489,7 @@ footer {
  .typeCard{
    height: 25px;
    width: 25px;
-   margin: 10px;
+   margin: 20px;
  }
  
  .imgTypeElement{
@@ -495,17 +497,26 @@ footer {
   display: flex;
   justify-content: center;
  }
-
+.typeElement span{
+  width: 20%;
+  text-align: center;
+}
  .typeElement{
   height:14px;
   Font-Family: 'Open Sans', Sans-Serif;
   color: #2D4C8F;
+  font-weight: bold;
   font-size: 14px;
   display: flex;
   justify-content: center;
  }
 
-
+.lineCard{
+  size: 0.5px;
+  background-color:#2D4C8F; 
+  width: 80%;
+  opacity: 70%
+}
 
 @media screen and (max-width:800px){
   
