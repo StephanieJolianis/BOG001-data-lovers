@@ -4,6 +4,8 @@ import { sortAzAsc } from './data.js';
 import { sortZaDesc } from './data.js';
 import { sortNumAsc } from './data.js';
 import { sortNumDesc } from './data.js';
+import { findData2 } from './data.js';
+
 
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
@@ -15,7 +17,6 @@ function openNav() {
 function closeNav() {
   document.getElementById("navMenu").style.display = "none";
 }
-
 
 // Menu Function ------------------------------------------------------------------------------
 
@@ -55,8 +56,7 @@ if (screenWidthDesk.matches) {
   document.getElementById("weaknessButton").addEventListener("mouseover", pikachuOnWeakness);
   document.getElementById("sortButton").addEventListener("mouseover", pikachuOnSort);
   document.getElementById("pokestatsButton").addEventListener("mouseover", pikachuOnStats);
-
-} else {
+  } else {
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
@@ -172,28 +172,22 @@ createPokemons(result);
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 
 // Filter function implementation -----------------------------------------------
-
+var initialText="151 pokémons available";
+document.getElementById("pFilter").innerText=initialText;
 
 const showTypeFilter = () => {
   var cath="type";
   var subcath = event.target.innerHTML;
 
   if (subcath=="All"){
-    document.getElementById("pFilter").innerHTML="";
-    document.getElementsByTagName("main")[0].style.gridRowStart = null;
-    document.getElementsByTagName("main")[0].style.gridRowEnd = null;
     createPokemons(result);
+    document.getElementById("pFilter").innerText=initialText;
     } else {
     var resultTypeFilter=filterFunction(result, cath, subcath);
     let nFilter=resultTypeFilter.length;
-    document.getElementById("pFilter").innerHTML=nFilter+" pokémon found";
-    
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowStart = 5:document.getElementsByTagName("main")[0].style.gridRowStart = 7;
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowEnd = 6: document.getElementsByTagName("main")[0].style.gridRowEnd = 8;
+    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
     createPokemons(resultTypeFilter);
-    console.log(nFilter+"pokémon found")
   }  
-  
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none":document.getElementById("typeMenu").style.display="none";
 }    
 
@@ -210,20 +204,17 @@ const showTypeMenu = () => {
 
 
 
+
 const showWeakFilter = () => {
   var cath="weaknesses";
   var subcath = event.target.innerHTML;
   if (subcath=="All"){
-    document.getElementById("pFilter").innerHTML="";
-    document.getElementsByTagName("main")[0].style.gridRowStart = null;
-    document.getElementsByTagName("main")[0].style.gridRowEnd = null;
     createPokemons(result);  
+    document.getElementById("pFilter").innerText=initialText;
   } else {
     let resultWeakFilter=filterFunction(result, cath, subcath);
     let nFilter=resultWeakFilter.length;
-    document.getElementById("pFilter").innerHTML=nFilter+" pokémon found";
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowStart = 5:document.getElementsByTagName("main")[0].style.gridRowStart = 7;
-    screenWidthMobile.matches ? document.getElementsByTagName("main")[0].style.gridRowEnd = 6: document.getElementsByTagName("main")[0].style.gridRowEnd = 8;
+    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
     createPokemons(resultWeakFilter);
   }
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
@@ -257,47 +248,82 @@ document.getElementById("weaknessMenu").addEventListener("click", showWeakFilter
 document.getElementById("weaknessButton").addEventListener("click", showWeaknessMenu);
 document.getElementById("sortButton").addEventListener("click", showSortMenu);
 
-// Filter function implementation ---------------------------------------------------------------
-
 // sortListAzAsc function implementation --------------------------------------------------------
 let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
  createPokemons(sortListAz);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
-
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
-// sortListAzAsc function implementation -------------------------------------------------------
 
 // sortListZaDesc function implementation ------------------------------------------------------
 let sortListZa = sortZaDesc();
 const sortListZaDesc = () => {
  createPokemons(sortListZa);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
-// sortListZaDesc function implementation -----------------------------------------------------
 
 // sortListNumAsc function implementation -----------------------------------------------------
 let sortNum1 = sortNumAsc();
 const sortListNumAsc = () => {
  createPokemons(sortNum1);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
 document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
-// sortListNumAsc function implementation -----------------------------------------------------
+
 
 // sortListNumDesc function implementation ----------------------------------------------------
 let sortNum2 = sortNumDesc();
 const sortListNumDesc = () => {
  createPokemons(sortNum2);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation ----------------------------------------------------
 
+// Search Bar Function:
+var searchInput=document.getElementById("searchInput");
+
+const searchFunction = () => {
+ var searchArray=findData2(result , searchInput.value);
+
+ console.log(typeof(searchArray))
+
+ createPokemons(searchArray);
+}
+
+searchInput.addEventListener("keyup", searchFunction);
 
 
+/////////////////////////////////////////////////////////////////////////
+///////////                pokeStats                         /////////////
 
+//var Chart = require('chart.js');
+var pokeStatsButton=document.getElementById("pokestatsButton");
+var homePage=document.getElementById("container");
+var pokeStatsPage=document.getElementById("pokeStats");
+var divFilter= document.getElementById("divFilter");
+var mainMenu=document.getElementsByClassName("mainMenu")[0];
+var backButton=document.getElementById("backButton");
+
+const showPokeStats = () => {
+  homePage.style.display="none";
+  divFilter.style.display="none";
+  mainMenu.style.display="none";
+  pokeStatsPage.style.display="block";
+  backButton.style.display="block";
+}
+
+const backHome = () => {
+  homePage.style.display=null;
+  divFilter.style.display=null;
+  mainMenu.style.display=null;
+  pokeStatsPage.style.display="none";
+  backButton.style.display=null;
+}
+
+pokeStatsButton.addEventListener("click", showPokeStats);
+backButton.addEventListener("click", backHome);
 
 

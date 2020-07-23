@@ -115,9 +115,6 @@
   
 }
 
-
-
-
 #typeMenu li, #weaknessMenu li, .sortMenu li{
   
   background: #FAD224;
@@ -130,28 +127,56 @@
   font-size: medium;
 }
 
-
+#backButton {
+  display: none;
+}
 
 
 #divFilter {
   color: #2D4C8F;
   Font-Family: 'Raleway', Sans-Serif;
-  height: fit-content;
-  width: fit-content;
   position: absolute;
-  right: 6.5%;
-  top: 21%;
+  font-size: small;
+  top: 20%;
+  width: 90%;
+  height: 5%;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #pFilter {
   
- 
+  position: absolute;
   width: fit-content;
   padding: 0;
   margin: 0;
+  right: 5%;
+  top: 30%;
 }
 
+#searchBar {
+  grid-column-start: 4;
+  grid-column-end: 8;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  padding: 3% 0 3% 0;
+  height: 100%;
+ 
+}
 
+#searchInput {
+  border-radius: 5px;
+  border: 1px solid #F7C900;
+  
+
+  
+}
+
+#searchInput::placeholder {
+  Font-Family: 'Raleway', Sans-Serif;
+  color: #F7C900;
+  opacity: 50%;
+  text-align: right;
+}
 
 main{
   background-image: url(imagenes/background2.jpg);
@@ -163,7 +188,7 @@ main{
   overflow-y: scroll;
   grid-column-start: 1;
   grid-column-end: 9;
-  grid-row-start: 4;
+  grid-row-start: 5;
   grid-row-end: 6;
  
 }
@@ -209,6 +234,12 @@ main{
 
 #topButtonImg:hover {
   opacity:1;
+}
+
+
+
+#pokeStats {
+  display: none;
 }
 
 
@@ -693,35 +724,55 @@ footer {
     height: 25%;
   }
 
-  
+  #searchBar {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    position: relative;
+    z-index: 1000;
+    padding: 2% 7% 2% 0;
+    height: 100%;
+    
+    /*border: solid 5px green;*/
+   
+  }
+
+  #searchInput::placeholder {
+    font-size: large;
+  }
+
   #divFilter {
+    font-size: large;
     color: #2D4C8F;
     Font-Family: 'Raleway', Sans-Serif;
-    height: fit-content;
-    width: fit-content;
+    height: 5%;
+    width: 79.5%;
+    margin: 0;
+    padding: 0;
     position: absolute;
     right: 10.5%;
-    top: 29%;
+    top: 27%;
+    background-color: rgba(255, 255, 255, 0.3);
+    justify-content: right;
   }
   
   #pFilter {
     
-   
+    position: absolute;
+    right: 7%;
+    top: 40%;
     width: fit-content;
+    height: fit-content;
     padding: 0;
     margin: 0;
   }
-
-
-
-   
-
-
   
+
   main {
     grid-column-start: 1;
     grid-column-end:11;
-    grid-row-start: 6;
+    grid-row-start: 7;
     grid-row-end: 8;
     overflow:hidden;
     overflow-y: scroll;
