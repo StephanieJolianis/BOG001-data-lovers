@@ -6,6 +6,7 @@ import { sortNumAsc } from './data.js';
 import { sortNumDesc } from './data.js';
 import { findData2 } from './data.js';
 
+
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
 document.getElementById("closeBtn").addEventListener("click", closeNav);
@@ -247,41 +248,36 @@ document.getElementById("weaknessMenu").addEventListener("click", showWeakFilter
 document.getElementById("weaknessButton").addEventListener("click", showWeaknessMenu);
 document.getElementById("sortButton").addEventListener("click", showSortMenu);
 
-// Filter function implementation ---------------------------------------------------------------
-
 // sortListAzAsc function implementation --------------------------------------------------------
 let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
  createPokemons(sortListAz);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
-
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
-// sortListAzAsc function implementation -------------------------------------------------------
 
 // sortListZaDesc function implementation ------------------------------------------------------
 let sortListZa = sortZaDesc();
 const sortListZaDesc = () => {
  createPokemons(sortListZa);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
-// sortListZaDesc function implementation -----------------------------------------------------
 
 // sortListNumAsc function implementation -----------------------------------------------------
 let sortNum1 = sortNumAsc();
 const sortListNumAsc = () => {
  createPokemons(sortNum1);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
 document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
-// sortListNumAsc function implementation -----------------------------------------------------
+
 
 // sortListNumDesc function implementation ----------------------------------------------------
 let sortNum2 = sortNumDesc();
 const sortListNumDesc = () => {
  createPokemons(sortNum2);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+ screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
 }
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation ----------------------------------------------------
@@ -290,7 +286,7 @@ document.getElementById("numberDesc").addEventListener("click", sortListNumDesc)
 var searchInput=document.getElementById("searchInput");
 
 const searchFunction = () => {
- var searchArray=findData2(searchInput.value);
+ var searchArray=findData2(result , searchInput.value);
 
  console.log(typeof(searchArray))
 
@@ -300,5 +296,34 @@ const searchFunction = () => {
 searchInput.addEventListener("keyup", searchFunction);
 
 
+/////////////////////////////////////////////////////////////////////////
+///////////                pokeStats                         /////////////
+
+//var Chart = require('chart.js');
+var pokeStatsButton=document.getElementById("pokestatsButton");
+var homePage=document.getElementById("container");
+var pokeStatsPage=document.getElementById("pokeStats");
+var divFilter= document.getElementById("divFilter");
+var mainMenu=document.getElementsByClassName("mainMenu")[0];
+var backButton=document.getElementById("backButton");
+
+const showPokeStats = () => {
+  homePage.style.display="none";
+  divFilter.style.display="none";
+  mainMenu.style.display="none";
+  pokeStatsPage.style.display="block";
+  backButton.style.display="block";
+}
+
+const backHome = () => {
+  homePage.style.display=null;
+  divFilter.style.display=null;
+  mainMenu.style.display=null;
+  pokeStatsPage.style.display="none";
+  backButton.style.display=null;
+}
+
+pokeStatsButton.addEventListener("click", showPokeStats);
+backButton.addEventListener("click", backHome);
 
 

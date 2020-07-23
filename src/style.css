@@ -115,9 +115,6 @@
   
 }
 
-
-
-
 #typeMenu li, #weaknessMenu li, .sortMenu li{
   
   background: #FAD224;
@@ -130,7 +127,9 @@
   font-size: medium;
 }
 
-
+#backButton {
+  display: none;
+}
 
 
 #divFilter {
@@ -235,6 +234,12 @@ main{
 
 #topButtonImg:hover {
   opacity:1;
+}
+
+
+
+#pokeStats {
+  display: none;
 }
 
 
@@ -707,13 +712,8 @@ footer {
     padding: 0;
     margin: 0;
   }
-
-
-
-   
-
-
   
+
   main {
     grid-column-start: 1;
     grid-column-end:11;

@@ -31,11 +31,10 @@ export const findData = (pokemonFind) => {
   }
 
 
-export const findData2 = (toFind) => {
-  let detailPokemon = data.pokemon.filter (onePokemon => 
+export const findData2 = (arrayData, toFind) => {
+  let detailPokemon = arrayData.filter (onePokemon => 
     (onePokemon.num.includes(toFind) || onePokemon.name.toUpperCase().includes(toFind.toUpperCase())));
   return detailPokemon;
-  
   }
 
 export const detailCardPokemon = (numPokemon) => {

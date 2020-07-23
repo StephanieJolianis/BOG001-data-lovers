@@ -1,5 +1,5 @@
 /*import { data2, anotherExample } from '../src/data.js';*/
-import { data2, filterFunction, sortAzAsc, sortZaDesc, sortNumAsc, sortNumDesc } from '../src/data.js';
+import { data2, filterFunction, sortAzAsc, sortZaDesc, sortNumAsc, sortNumDesc, findData2 } from '../src/data.js';
 //import pokemon from '../src/data/pokemon/pokemon.js';
 const mockData = [{
   "id": 1,
@@ -517,6 +517,66 @@ const filteredRock=[{
   }]
 }];
 
+const charmander=[{
+  "id": 4,
+  "num": "004",
+  "name": "Charmander",
+  "img": "http://www.serebii.net/pokemongo/pokemon/004.png",
+  "type": [
+    "Fire"
+  ],
+  "height": "0.61 m",
+  "weight": "8.5 kg",
+  "candy": "Charmander Candy",
+  "candy_count": 25,
+  "egg": "2 km",
+  "spawn_chance": 0.253,
+  "avg_spawns": 25.3,
+  "spawn_time": "08:45",
+  "multipliers": [1.65],
+  "weaknesses": [
+    "Water",
+    "Ground",
+    "Rock"
+  ],
+  "next_evolution": [{
+    "num": "005",
+    "name": "Charmeleon"
+  }, {
+    "num": "006",
+    "name": "Charizard"
+  }]
+}];
+
+const num009=[{
+  "id": 9,
+  "num": "009",
+  "name": "Blastoise",
+  "img": "http://www.serebii.net/pokemongo/pokemon/009.png",
+  "type": [
+    "Water"
+  ],
+  "height": "1.60 m",
+  "weight": "85.5 kg",
+  "candy": "Squirtle Candy",
+  "egg": "Not in Eggs",
+  "spawn_chance": 0.0067,
+  "avg_spawns": 0.67,
+  "spawn_time": "00:06",
+  "multipliers": null,
+  "weaknesses": [
+    "Electric",
+    "Grass"
+  ],
+  "prev_evolution": [{
+    "num": "007",
+    "name": "Squirtle"
+  }, {
+    "num": "008",
+    "name": "Wartortle"
+  }]
+}];
+
 describe('filterFunction es una función', () => {
 
   it('is a function', () => {
@@ -629,3 +689,20 @@ describe('sortNumDesc es una funcion para ordenar numericamente', () => {
 
 });
 
+describe('findData2 es una función', () => {
+
+  it('findData2 es una función', () => {
+    expect(typeof findData2).toBe('function');
+  });
+
+  it('findData2 puede buscar por nombre', () => {
+    let resultadoNombre = findData2(mockData, "Charmander");
+    expect(resultadoNombre).toEqual(charmander);
+  });
+
+  it('findData2 puede buscar por número', () => {
+    let resultadoNum = findData2(mockData, "009");
+    expect(resultadoNum).toEqual(num009);
+  });
+
+});
