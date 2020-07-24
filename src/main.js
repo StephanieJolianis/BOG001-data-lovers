@@ -165,8 +165,8 @@ const createPokemons = (result) => {
   }
 
 }
-
-var result = data2();
+// agrego el evento click a los elementos nuevos ----------------------------------------------
+let result = data2();
 let container = document.getElementById("container");
 createPokemons(result);
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
