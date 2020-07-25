@@ -139,12 +139,16 @@
 
 #back {
   display: block;
-  width: 10%;
+  width: 7%;
   height: 70%;
-  margin-top: auto;
-  margin-bottom: auto;
-  
+  position: relative;
+  top: 15%;
+  bottom: 15%;
+  left: 11%;
+   
 }
+
+
 
 #divFilter {
   color: #2D4C8F;
@@ -877,6 +881,18 @@ height: 20px;
     
     
   }
+
+  #back {
+    display: block;
+    width: 2.5%;
+    height: 70%;
+    position: relative;
+    top: 15%;
+    bottom: 15%;
+    left: 16.8%;
+     
+  }
+  
 
   main {
     grid-column-start: 1;

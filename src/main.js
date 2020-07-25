@@ -7,6 +7,7 @@ import { sortNumDesc } from './data.js';
 import { findData2 } from './data.js';
 
 
+
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
 document.getElementById("closeBtn").addEventListener("click", closeNav);
@@ -318,8 +319,10 @@ const showPokeStats = () => {
    
   pokeStatsPage.style.display="block";
   backButton.style.display="block";
-  
-  //screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none";
+
+  document.getElementById("pikachu").style.display = "block";
+  document.getElementById("pikachu").style.gridColumnStart = 2;
+  document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
 
 const backHome = () => {
@@ -336,4 +339,45 @@ const backHome = () => {
 pokeStatsButton.addEventListener("click", showPokeStats);
 backButton.addEventListener("click", backHome);
 
+
+
+// Charts:
+var ctx = document.getElementById('myChart').getContext('2d');
+var Chart=require('chart.js');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 
