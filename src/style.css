@@ -127,9 +127,27 @@
   font-size: medium;
 }
 
-#backButton {
+.backButton {
   display: none;
+  grid-column-start: 1;
+  grid-column-end: 9;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  background-color: #F7C900;
+  
 }
+
+#back {
+  display: block;
+  width: 7%;
+  height: 70%;
+  position: relative;
+  top: 15%;
+  bottom: 15%;
+  left: 11%;
+   
+}
+
 
 
 #divFilter {
@@ -856,6 +874,28 @@ height: 20px;
     height: fit-content;
     padding: 0;
     margin: 0;
+  }
+
+  .backButton {
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    background-color: #F7C900;
+    
+    
+  }
+
+  #back {
+    display: block;
+    width: 2.5%;
+    height: 70%;
+    position: relative;
+    top: 15%;
+    bottom: 15%;
+    left: 16.8%;
+     
   }
   
 

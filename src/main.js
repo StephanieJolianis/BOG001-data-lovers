@@ -7,6 +7,7 @@ import { sortNumDesc } from './data.js';
 import { findData2 } from './data.js';
 
 
+
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
 document.getElementById("closeBtn").addEventListener("click", closeNav);
@@ -293,26 +294,37 @@ searchInput.addEventListener("keyup", searchFunction);
 
 //var Chart = require('chart.js');
 var pokeStatsButton=document.getElementById("pokestatsButton");
-var homePage=document.getElementById("container");
 var pokeStatsPage=document.getElementById("pokeStats");
 var divFilter= document.getElementById("divFilter");
-var mainMenu=document.getElementsByClassName("mainMenu")[0];
-var backButton=document.getElementById("backButton");
+var backButton=document.getElementsByClassName("backButton")[0];
+var navMenu=document.getElementById("navMenu");
+var menuBar=document.getElementsByClassName("menuBar")[0];
+var searchBar=document.getElementById("searchBar");
+
 
 const showPokeStats = () => {
-  homePage.style.display="none";
+  menuBar.style.display="none";
+  navMenu.style.display="none";
+  searchBar.style.display="none";
+  container.style.display="none";
   divFilter.style.display="none";
-  mainMenu.style.display="none";
+   
   pokeStatsPage.style.display="block";
   backButton.style.display="block";
+
+  document.getElementById("pikachu").style.display = "block";
+  document.getElementById("pikachu").style.gridColumnStart = 2;
+  document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
 
 const backHome = () => {
-  homePage.style.display=null;
+  menuBar.style.display=null;
+  navMenu.style.display=null;
+  searchBar.style.display=null;
+  container.style.display=null;
   divFilter.style.display=null;
-  mainMenu.style.display=null;
-  pokeStatsPage.style.display="none";
-  pokemonCard.style.display="none";
+  pokeStatsPage.style.display=null;
+  containerCard1.style.display=null;
   backButton.style.display=null;
 }
 
@@ -324,11 +336,18 @@ backButton.addEventListener("click", backHome);
 let pokemonCard = document.getElementById("containerCard1")
 
 const pokemonCardView = () => {
-  homePage.style.display="none";
+  menuBar.style.display="none";
+  navMenu.style.display="none";
+  searchBar.style.display="none";
+  container.style.display="none";
   divFilter.style.display="none";
-  mainMenu.style.display="none";
+   
   pokemonCard.style.display="block";
   backButton.style.display="block";
+
+  document.getElementById("pikachu").style.display = "block";
+  document.getElementById("pikachu").style.gridColumnStart = 2;
+  document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
 
 
