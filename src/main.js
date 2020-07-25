@@ -87,14 +87,6 @@ topButton.addEventListener("click", topFunction);
 
 // To top function ------------------------------------------------------------------------------
 
-// Funcion de crear detalle del pokemon ---------------------------------------------------------
-
-function createDetailPokemon(numPokemon) {
-  let callingFind = detailCardPokemon(numPokemon);
-  console.log(callingFind);
-}
-// Funcion de crear detalle del pokemon ---------------------------------------------------------
-
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 const createPokemons = (result) => {
 // elimino los child creados en container antes de crear nuevos child ---------------------------
@@ -331,53 +323,83 @@ const backHome = () => {
   searchBar.style.display=null;
   container.style.display=null;
   divFilter.style.display=null;
-   
   pokeStatsPage.style.display=null;
+  mainMenu.style.display=null;
+  pokemonCard.style.display="none";
   backButton.style.display=null;
+  containerCard1.style.display=null;
 }
 
 pokeStatsButton.addEventListener("click", showPokeStats);
 backButton.addEventListener("click", backHome);
+// pokemonCard ----------------------------------------------------------
+let pokemonCard = document.getElementById("containerCard1")
+
+const pokemonCardView = () => {
+  homePage.style.display="none";
+  divFilter.style.display="none";
+  mainMenu.style.display="none";
+  pokemonCard.style.display="block";
+  backButton.style.display="block";
+}
+
+// Funcion de crear detalle del pokemon ---------------------------------------------------------
+
+function createDetailPokemon(numPokemon) {
+  let callingFind = detailCardPokemon(numPokemon);
+  let imagePokemonMain = document.getElementById("mainImg");
+  imagePokemonMain.src = callingFind.img;
+  let imgPokemonType1= document.getElementById("typeImg1");
+  imgPokemonType1.src =  "imagenes/"+ callingFind.type[0].toLowerCase() + ".png";
+
+  pokemonCardView();
+  
+  
+}
+// Funcion de crear detalle del pokemon ---------------------------------------------------------
 
 
 
 // Charts:
-var ctx = document.getElementById('myChart').getContext('2d');
-var Chart=require('chart.js');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
+// var ctx = document.getElementById('myChart').getContext('2d');
+// var Chart=require('chart.js');
+// var myChart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//         datasets: [{
+//             label: '# of Votes',
+//             data: [12, 19, 3, 5, 2, 3],
+//             backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//             ],
+//             borderColor: [
+//                 'rgba(255, 99, 132, 1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//             ],
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }]
+//         }
+//     }
+// });
+
+
+
 
