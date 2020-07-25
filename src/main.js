@@ -86,14 +86,6 @@ topButton.addEventListener("click", topFunction);
 
 // To top function ------------------------------------------------------------------------------
 
-// Funcion de crear detalle del pokemon ---------------------------------------------------------
-
-function createDetailPokemon(numPokemon) {
-  let callingFind = detailCardPokemon(numPokemon);
-  console.log(callingFind);
-}
-// Funcion de crear detalle del pokemon ---------------------------------------------------------
-
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 const createPokemons = (result) => {
 // elimino los child creados en container antes de crear nuevos child ---------------------------
@@ -320,6 +312,7 @@ const backHome = () => {
   divFilter.style.display=null;
   mainMenu.style.display=null;
   pokeStatsPage.style.display="none";
+  pokemonCard.style.display="none";
   backButton.style.display=null;
 }
 
@@ -327,3 +320,29 @@ pokeStatsButton.addEventListener("click", showPokeStats);
 backButton.addEventListener("click", backHome);
 
 
+// pokemonCard ----------------------------------------------------------
+let pokemonCard = document.getElementById("containerCard1")
+
+const pokemonCardView = () => {
+  homePage.style.display="none";
+  divFilter.style.display="none";
+  mainMenu.style.display="none";
+  pokemonCard.style.display="block";
+  backButton.style.display="block";
+}
+
+
+// Funcion de crear detalle del pokemon ---------------------------------------------------------
+
+function createDetailPokemon(numPokemon) {
+  let callingFind = detailCardPokemon(numPokemon);
+  let imagePokemonMain = document.getElementById("mainImg");
+  imagePokemonMain.src = callingFind.img;
+  let imgPokemonType1= document.getElementById("typeImg1");
+  imgPokemonType1.src =  "imagenes/"+ callingFind.type[0].toLowerCase() + ".png";
+
+  pokemonCardView();
+  
+  
+}
+// Funcion de crear detalle del pokemon ---------------------------------------------------------
