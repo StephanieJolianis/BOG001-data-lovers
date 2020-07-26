@@ -30,8 +30,8 @@ var pikachuOnType = () => {
   document.getElementById("pikachu").style.display = "block";
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
-  
-  
+
+
 }
 
 var pikachuOnWeakness = () => {
@@ -57,7 +57,7 @@ if (screenWidthDesk.matches) {
   document.getElementById("weaknessButton").addEventListener("mouseover", pikachuOnWeakness);
   document.getElementById("sortButton").addEventListener("mouseover", pikachuOnSort);
   document.getElementById("pokestatsButton").addEventListener("mouseover", pikachuOnStats);
-  } else {
+} else {
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
@@ -89,11 +89,11 @@ topButton.addEventListener("click", topFunction);
 
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 const createPokemons = (result) => {
-// elimino los child creados en container antes de crear nuevos child ---------------------------
+  // elimino los child creados en container antes de crear nuevos child ---------------------------
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
-// elimino los child creados en container antes de crear nuevos child ---------------------------
+  // elimino los child creados en container antes de crear nuevos child ---------------------------
   for (let pokemonIndex of result) {
 
     let pokemon = document.createElement("div");
@@ -165,33 +165,33 @@ createPokemons(result);
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 
 // Filter function implementation -----------------------------------------------
-var initialText="151 pokémons available";
-document.getElementById("pFilter").innerText=initialText;
+var initialText = "151 pokémons available";
+document.getElementById("pFilter").innerText = initialText;
 
 const showTypeFilter = () => {
-  var cath="type";
+  var cath = "type";
   var subcath = event.target.innerHTML;
 
-  if (subcath=="All"){
+  if (subcath == "All") {
     createPokemons(result);
-    document.getElementById("pFilter").innerText=initialText;
-    } else {
-    var resultTypeFilter=filterFunction(result, cath, subcath);
-    let nFilter=resultTypeFilter.length;
-    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
+    document.getElementById("pFilter").innerText = initialText;
+  } else {
+    var resultTypeFilter = filterFunction(result, cath, subcath);
+    let nFilter = resultTypeFilter.length;
+    document.getElementById("pFilter").innerText = nFilter + " pokémon found";
     createPokemons(resultTypeFilter);
-  }  
-  screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none":document.getElementById("typeMenu").style.display="none";
-}    
+  }
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("typeMenu").style.display = "none";
+}
 
 const showTypeMenu = () => {
 
-  if(screenWidthDesk.matches){
-    var displayMenu=document.getElementById("typeMenu");
-    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
-    
-    document.getElementById("weaknessMenu").style.display="none";
-    document.getElementById("sort").style.display="none";
+  if (screenWidthDesk.matches) {
+    var displayMenu = document.getElementById("typeMenu");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display = "block" : displayMenu.style.display = "none";
+
+    document.getElementById("weaknessMenu").style.display = "none";
+    document.getElementById("sort").style.display = "none";
   }
 }
 
@@ -199,39 +199,39 @@ const showTypeMenu = () => {
 
 
 const showWeakFilter = () => {
-  var cath="weaknesses";
+  var cath = "weaknesses";
   var subcath = event.target.innerHTML;
-  if (subcath=="All"){
-    createPokemons(result);  
-    document.getElementById("pFilter").innerText=initialText;
+  if (subcath == "All") {
+    createPokemons(result);
+    document.getElementById("pFilter").innerText = initialText;
   } else {
-    let resultWeakFilter=filterFunction(result, cath, subcath);
-    let nFilter=resultWeakFilter.length;
-    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
+    let resultWeakFilter = filterFunction(result, cath, subcath);
+    let nFilter = resultWeakFilter.length;
+    document.getElementById("pFilter").innerText = nFilter + " pokémon found";
     createPokemons(resultWeakFilter);
   }
-  screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("weaknessMenu").style.display = "none";
 }
 
 const showWeaknessMenu = () => {
-  if(screenWidthDesk.matches){
-    var displayMenu=document.getElementById("weaknessMenu");
-    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
+  if (screenWidthDesk.matches) {
+    var displayMenu = document.getElementById("weaknessMenu");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display = "block" : displayMenu.style.display = "none";
 
-    document.getElementById("typeMenu").style.display="none";
-    document.getElementById("sort").style.display="none";
+    document.getElementById("typeMenu").style.display = "none";
+    document.getElementById("sort").style.display = "none";
   }
 }
 
 
 const showSortMenu = () => {
-  if(screenWidthDesk.matches){
-   
-    let displayMenu=document.getElementById("sort");
-    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
-    
-    document.getElementById("typeMenu").style.display="none";
-    document.getElementById("weaknessMenu").style.display="none";
+  if (screenWidthDesk.matches) {
+
+    let displayMenu = document.getElementById("sort");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display = "block" : displayMenu.style.display = "none";
+
+    document.getElementById("typeMenu").style.display = "none";
+    document.getElementById("weaknessMenu").style.display = "none";
   }
 }
 
@@ -244,24 +244,24 @@ document.getElementById("sortButton").addEventListener("click", showSortMenu);
 // sortListAzAsc function implementation --------------------------------------------------------
 let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
- createPokemons(sortListAz);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortListAz);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
 
 // sortListZaDesc function implementation ------------------------------------------------------
 let sortListZa = sortZaDesc();
 const sortListZaDesc = () => {
- createPokemons(sortListZa);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortListZa);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
 
 // sortListNumAsc function implementation -----------------------------------------------------
 let sortNum1 = sortNumAsc();
 const sortListNumAsc = () => {
- createPokemons(sortNum1);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortNum1);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 
@@ -269,21 +269,21 @@ document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 // sortListNumDesc function implementation ----------------------------------------------------
 let sortNum2 = sortNumDesc();
 const sortListNumDesc = () => {
- createPokemons(sortNum2);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortNum2);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation ----------------------------------------------------
 
 // Search Bar Function:
-var searchInput=document.getElementById("searchInput");
+var searchInput = document.getElementById("searchInput");
 
 const searchFunction = () => {
- var searchArray=findData2(result , searchInput.value);
+  var searchArray = findData2(result, searchInput.value);
 
- console.log(typeof(searchArray))
+  console.log(typeof (searchArray))
 
- createPokemons(searchArray);
+  createPokemons(searchArray);
 }
 
 searchInput.addEventListener("keyup", searchFunction);
@@ -293,24 +293,24 @@ searchInput.addEventListener("keyup", searchFunction);
 ///////////                pokeStats                         /////////////
 
 //var Chart = require('chart.js');
-var pokeStatsButton=document.getElementById("pokestatsButton");
-var pokeStatsPage=document.getElementById("pokeStats");
-var divFilter= document.getElementById("divFilter");
-var backButton=document.getElementsByClassName("backButton")[0];
-var navMenu=document.getElementById("navMenu");
-var menuBar=document.getElementsByClassName("menuBar")[0];
-var searchBar=document.getElementById("searchBar");
+var pokeStatsButton = document.getElementById("pokestatsButton");
+var pokeStatsPage = document.getElementById("pokeStats");
+var divFilter = document.getElementById("divFilter");
+var backButton = document.getElementsByClassName("backButton")[0];
+var navMenu = document.getElementById("navMenu");
+var menuBar = document.getElementsByClassName("menuBar")[0];
+var searchBar = document.getElementById("searchBar");
 
 
 const showPokeStats = () => {
-  menuBar.style.display="none";
-  navMenu.style.display="none";
-  searchBar.style.display="none";
-  container.style.display="none";
-  divFilter.style.display="none";
-   
-  pokeStatsPage.style.display="block";
-  backButton.style.display="block";
+  menuBar.style.display = "none";
+  navMenu.style.display = "none";
+  searchBar.style.display = "none";
+  container.style.display = "none";
+  divFilter.style.display = "none";
+
+  pokeStatsPage.style.display = "block";
+  backButton.style.display = "block";
 
   document.getElementById("pikachu").style.display = "block";
   document.getElementById("pikachu").style.gridColumnStart = 2;
@@ -318,50 +318,116 @@ const showPokeStats = () => {
 }
 
 const backHome = () => {
-  menuBar.style.display=null;
-  navMenu.style.display=null;
-  searchBar.style.display=null;
-  container.style.display=null;
-  divFilter.style.display=null;
-  pokeStatsPage.style.display=null;
-  containerCard1.style.display=null;
-  backButton.style.display=null;
+  menuBar.style.display = null;
+  navMenu.style.display = null;
+  searchBar.style.display = null;
+  container.style.display = null;
+  divFilter.style.display = null;
+  pokeStatsPage.style.display = null;
+  pokemonCard.style.display = null;
+  backButton.style.display = null;
 }
 
 pokeStatsButton.addEventListener("click", showPokeStats);
 backButton.addEventListener("click", backHome);
-
-
 // pokemonCard ----------------------------------------------------------
 let pokemonCard = document.getElementById("containerCard1")
 
 const pokemonCardView = () => {
-  menuBar.style.display="none";
-  navMenu.style.display="none";
-  searchBar.style.display="none";
-  container.style.display="none";
-  divFilter.style.display="none";
-   
-  pokemonCard.style.display="block";
-  backButton.style.display="block";
+  menuBar.style.display = "none";
+  navMenu.style.display = "none";
+  searchBar.style.display = "none";
+  container.style.display = "none";
+  divFilter.style.display = "none";
+
+  pokemonCard.style.display = "block";
+  backButton.style.display = "block";
 
   document.getElementById("pikachu").style.display = "block";
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
 
-
 // Funcion de crear detalle del pokemon ---------------------------------------------------------
 
 function createDetailPokemon(numPokemon) {
   let callingFind = detailCardPokemon(numPokemon);
+  let numName = document.getElementById("pokemonNameNum");
+  numName.innerText = callingFind.num + " " + callingFind.name;
   let imagePokemonMain = document.getElementById("mainImg");
   imagePokemonMain.src = callingFind.img;
-  let imgPokemonType1= document.getElementById("typeImg1");
-  imgPokemonType1.src =  "imagenes/"+ callingFind.type[0].toLowerCase() + ".png";
+  let imgPokemonType1 = document.getElementById("typeImg1");
+  imgPokemonType1.src = "imagenes/" + callingFind.type[0].toLowerCase() + ".png";
+  let element1 = document.getElementById("elemntType1");
+  element1.innerText = callingFind.type[0];
+  let imgPokemonType2 = document.getElementById("typeImg2");
+  let element2 = document.getElementById("elemntType2");
+
+  if (callingFind.type.length > 1) {
+    imgPokemonType2.src = "imagenes/" + callingFind.type[1].toLowerCase() + ".png";
+    element2.innerText = callingFind.type[1];
+    imgPokemonType2.style.display = null;
+    element2.style.display = null;
+  } else {
+    imgPokemonType2.style.display = "none";
+    element2.style.display = "none";
+  }
+
+  let heightPokemon = document.getElementById("height");
+  heightPokemon.innerText = callingFind.height;
+  let weightPokemon = document.getElementById("weight");
+  weightPokemon.innerText = callingFind.weight;
+  let weaknessesInfo = document.getElementById("infoWeakness");
+  weaknessesInfo.innerText = callingFind.weaknesses;
 
   pokemonCardView();
-  
-  
+
+
 }
 // Funcion de crear detalle del pokemon ---------------------------------------------------------
+
+
+
+// Charts:
+var ctx = document.getElementById('myChart').getContext('2d');
+// var Chart=require('chart.js');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+
+

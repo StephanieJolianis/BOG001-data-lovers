@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400" rel="stylesheet">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,9 @@
 
 
     <div class="menuBar"><a id="menuBtn"> Menu </a></div>
-    <div class="backButton"><img id="back" src="imagenes/home3.png"><div class="yellow"></div></div>
+    <div class="backButton"><img id="back" src="imagenes/home3.png">
+      <div class="yellow"></div>
+    </div>
 
     <nav id="navMenu">
       <a id="closeBtn">x</a>
@@ -89,20 +92,22 @@
       </div>
       <div id="pokeStats"><canvas id="myChart" width="400" height="400"></canvas></div>
 
-      <div class="containerCard" id = "containerCard1">
-        <h1>007 Squirtle</h1>
+      <div class="containerCard" id="containerCard1">
+        <h1 id="pokemonNameNum">007 Squirtle</h1>
         <figure class="mainPokemon">
-          <img class="mainPokemonImg" id = "mainImg" src="imagenes/007.png"></figure>
-        <figure class="imgTypeElement"><img class="typeCard" id = "typeImg1" src="imagenes/grass.png"><img class="typeCard"
-          id = "typeImg2" src="imagenes/poison.png"></figure>
-        <div class=typeElementCard><span>Grass</span><span>Poison</span></div>
-  
+          <img class="mainPokemonImg" id="mainImg" src="imagenes/007.png"></figure>
+        <figure class="imgTypeElement"><img class="typeCard" id="typeImg1" src="imagenes/grass.png"><img
+            class="typeCard" id="typeImg2" src="imagenes/poison.png"></figure>
+        <div class=typeElementCard><span id = "elemntType1">Grass</span><span id = "elemntType2">Poison</span></div>
+
         <div class="height">
-          <h4>Height</h4><span class="infoHeight">0.71m</span>
-          <h4>Weight</h4><span class="infoHeight">6.9kg</span>
+          <h4 >Height</h4><span class="infoHeight" id = "height">0.71m</span>
+          <h4>Weight</h4><span class="infoHeight" id = "weight">6.9kg</span>
         </div>
+
+
         <div class="weaknesses">
-          <h4>Weaknesses</h4><span class="info">Fire,Ice,Flying,Psychic</span>
+          <h4>Weaknesses</h4><span class="info" id = "infoWeaknesses">Fire,Ice,Flying,Psychic</span>
         </div>
         <hr class="lineCard" />
 
@@ -126,7 +131,8 @@
 
     <div id="topButton"><img id="topButtonImg" src="imagenes/pokearrow.png"></div>
 
-    <footer><div class="socialNetwork">
+    <footer>
+      <div class="socialNetwork">
         <a class="network" href="https://www.facebook.com/PokemonGO/" target="_blank">
           <img src="imagenes/face.png">
         </a>
