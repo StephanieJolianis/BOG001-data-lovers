@@ -294,12 +294,15 @@ searchInput.addEventListener("keyup", searchFunction);
 
 //var Chart = require('chart.js');
 var pokeStatsButton=document.getElementById("pokestatsButton");
-var pokeStatsPage=document.getElementById("pokeStats");
+var pokeStatsPage1=document.getElementById("pokeStats1");
+var pokeStatsPage2=document.getElementById("pokeStats2");
 var divFilter= document.getElementById("divFilter");
-var backButton=document.getElementsByClassName("backButton")[0];
+var backBar=document.getElementsByClassName("backBar")[0];
+var backButton=document.getElementById("back");
 var navMenu=document.getElementById("navMenu");
 var menuBar=document.getElementsByClassName("menuBar")[0];
 var searchBar=document.getElementById("searchBar");
+var tryAgainButton=document.getElementById("tryAgain");
 
 
 const showPokeStats = () => {
@@ -309,8 +312,9 @@ const showPokeStats = () => {
   container.style.display="none";
   divFilter.style.display="none";
    
-  pokeStatsPage.style.display="block";
+  pokeStatsPage1.style.display="block";
   backButton.style.display="block";
+  backBar.style.display="block";
 
   document.getElementById("pikachu").style.display = "block";
   document.getElementById("pikachu").style.gridColumnStart = 2;
@@ -323,24 +327,36 @@ const backHome = () => {
   searchBar.style.display=null;
   container.style.display=null;
   divFilter.style.display=null;
-  pokeStatsPage.style.display=null;
-  mainMenu.style.display=null;
+  pokeStatsPage1.style.display=null;
+  pokeStatsPage2.style.display=null;
   pokemonCard.style.display="none";
+  containerCard1.style.display=null;
   backButton.style.display=null;
+  backBar.style.display=null;
   containerCard1.style.display=null;
 }
 
 pokeStatsButton.addEventListener("click", showPokeStats);
 backButton.addEventListener("click", backHome);
+
+
 // pokemonCard ----------------------------------------------------------
 let pokemonCard = document.getElementById("containerCard1")
 
 const pokemonCardView = () => {
-  homePage.style.display="none";
+  menuBar.style.display="none";
+  navMenu.style.display="none";
+  searchBar.style.display="none";
+  container.style.display="none";
   divFilter.style.display="none";
-  mainMenu.style.display="none";
+   
   pokemonCard.style.display="block";
   backButton.style.display="block";
+  backBar.style.display="block";
+
+  document.getElementById("pikachu").style.display = "block";
+  document.getElementById("pikachu").style.gridColumnStart = 2;
+  document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
 
 // Funcion de crear detalle del pokemon ---------------------------------------------------------
@@ -356,13 +372,58 @@ function createDetailPokemon(numPokemon) {
   
   
 }
-// Funcion de crear detalle del pokemon ---------------------------------------------------------
+
+// Crear botones para seleccionar los pokemon en pokestats:
+
+
+var divSelect1=document.getElementById("poke1");
+var select1=document.createElement("select");
+var divSelect2=document.getElementById("poke2");
+var select2=document.createElement("select");
+var divSelect3=document.getElementById("poke3");
+var select3=document.createElement("select");
+var doneButton=document.getElementById("done");
+
+select1.setAttribute("id", "select1")
+select2.setAttribute("id", "select2")
+select3.setAttribute("id", "select3")
+
+for (let i in result) {
+  var option1=document.createElement("option");
+  var option2=document.createElement("option");
+  var option3=document.createElement("option");
+  //option.setAttribute("value", result[i].name);
+  option1.text=result[i].name;
+  option2.text=result[i].name;
+  option3.text=result[i].name;
+  select1.appendChild(option1);
+  select2.appendChild(option2);
+  select3.appendChild(option3);
+}
+divSelect1.appendChild(select1);
+divSelect2.appendChild(select2);
+divSelect3.appendChild(select3);
+
+
+const showStats = () => {
+  pokeStatsPage1.style.display=null;
+  pokeStatsPage2.style.display="block";
+}
+
+const tryAgain = () => {
+  pokeStatsPage1.style.display="block";
+  pokeStatsPage2.style.display=null;
+}
+
+doneButton.addEventListener("click", showStats);
+tryAgainButton.addEventListener("click", tryAgain);
+
 
 
 
 // Charts:
-// var ctx = document.getElementById('myChart').getContext('2d');
-// var Chart=require('chart.js');
+// var ctx = document.getElementById("myChart").getContext("2d");
+// var Chart=require("chart.js");
 // var myChart = new Chart(ctx, {
 //     type: 'bar',
 //     data: {

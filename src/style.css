@@ -127,7 +127,7 @@
   font-size: medium;
 }
 
-.backButton {
+.backBar {
   display: none;
   grid-column-start: 1;
   grid-column-end: 9;
@@ -138,14 +138,15 @@
 }
 
 #back {
-  display: block;
-  width: 7%;
-  height: 70%;
-  position: relative;
-  top: 15%;
-  bottom: 15%;
-  left: 11%;
-   
+  display: none;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: auto;
+  padding: 0;
+  max-width: 10vw;
+  max-height: 10vw;
 }
 
 
@@ -256,8 +257,74 @@ main{
 
 
 
-#pokeStats {
+#pokeStats1 {
   display: none;
+  justify-content: center;
+}
+
+.text{
+  width: 250px;
+  text-align: center;
+  height: 150px;
+  margin: auto;
+  Font-Family: 'Raleway', Sans-Serif;
+  font-weight: bold;
+  font-size: larger;
+  color: #2D4C8F;
+}
+
+#poke1, #poke2, #poke3 {
+  height: 20px;
+  width: 250px;
+  margin: 10px auto ;
+
+}
+
+ div select{
+  Font-Family: 'Raleway', Sans-Serif;
+  font-size: small;
+  color: #2D4C8F;
+  
+} 
+div select option{
+  Font-Family: 'Raleway', Sans-Serif;
+  font-size: small;
+  color: #2D4C8F;
+} 
+
+.doneButton {
+  height: 40px;
+  width: 200px;
+  margin: 40px auto;
+  
+}
+
+#done {
+  Font-Family: 'Raleway', Sans-Serif;
+  font-size: medium;
+  background-color: #2D4C8F;
+  color:#F7C900
+}
+
+#pokeStats2 {
+  display: none;
+  justify-content: center;
+
+}
+
+.tryAgainButton{
+  height: 40px;
+  width: 200px;
+  margin: 40px auto;
+  
+}
+
+#tryAgain {
+  Font-Family: 'Raleway', Sans-Serif;
+  font-size: medium;
+  background-color: #2D4C8F;
+  color:#F7C900
+
 }
 
 
@@ -876,7 +943,7 @@ height: 20px;
     margin: 0;
   }
 
-  .backButton {
+  .backBar {
     display: none;
     grid-column-start: 1;
     grid-column-end: 11;
@@ -888,14 +955,16 @@ height: 20px;
   }
 
   #back {
-    display: block;
-    width: 2.5%;
-    height: 70%;
-    position: relative;
-    top: 15%;
-    bottom: 15%;
-    left: 16.8%;
-     
+    
+    
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    max-width: 2.5vw;
+    max-height: 2.5vw;
+    justify-self: center;
+
   }
   
 
@@ -930,6 +999,12 @@ height: 20px;
     
     
   }
+
+  .text{
+    width: 700px;
+    margin-top: 5vh;
+  }
+
 
   footer {
     grid-column-start: 1;
