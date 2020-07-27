@@ -721,4 +721,46 @@ describe('detailCardPokemon es una función', () => {
     expect(typeof detailCardPokemon).toBe('function');
   });
 
+  it('detailCardPokemon retorna un object', () => {
+    let returns = detailCardPokemon("001");
+    expect(typeof returns).toBe('object');
+  });
+
+  it('el objeto de detailCardPokemon debe tener la propiedad "num"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("num");
+  });
+
+  it('el objeto de detailCardPokemon debe tener la propiedad "name"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("name");
+  });
+
+  it('el objeto de detailCardPokemon debe tener la propiedad "type"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("type");
+  });
+
+  it('el objeto de detailCardPokemon debe tener la propiedad "img"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("img");
+  });
+
+  it('el objeto de detailCardPokemon debe tener la propiedad "height"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("height");
+  });
+  it('el objeto de detailCardPokemon debe tener la propiedad "weight"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("weight");
+  });
+  it('el objeto de detailCardPokemon debe tener la propiedad "weaknesses"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("weaknesses");
+  });
+  it('el objeto de detailCardPokemon debe tener la propiedad "evolutions"', () => {
+    let returns = detailCardPokemon("001");
+    expect(returns).toHaveProperty("evolutions");
+  });
+
 });
