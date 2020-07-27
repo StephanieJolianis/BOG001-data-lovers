@@ -12,7 +12,7 @@ export const data2 = () => {
       img: prueba1.img,
       weaknesses:prueba1.weaknesses,
       spawnTime: prueba1.spawn_time,
-      eggDistance: prueba1.egg
+      candyCount: prueba1.candy_count
     };
     myArray.push(firstObject);
     }
@@ -89,9 +89,7 @@ export const filterFunction = (dataBase, cath, subcath) => {
  const sortAz1 = (a,b) => {
   if (a.name > b.name) {
   return 1;
-}else if(a.name === b.name){
- return 0;
- }else{
+}else{
  return -1;
  }
 };
@@ -106,9 +104,7 @@ return dataPokemon.sort(sortAz1);
 const sortZa1 = (a,b) => {
   if (a.name < b.name) {
   return 1;
-}else if(a.name === b.name){
- return 0;
- }else{
+}else{
  return -1;
  }
 };

@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400" rel="stylesheet">
-  <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+  <!-- <script src="node_modules\chart.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 </head>
 
 <body>
@@ -89,17 +90,19 @@
       <div id="divFilter">
         <p id="pFilter"></p>
       </div>
-       <div id="pokeStats1">
-        <div class="text"><p> Select Three pokemon for comparing their Spawn Time and Egg Distance through a chart and their  mean. </p></div> 
-        
+      <div id="pokeStats1">
+        <div class="text">
+          <p> Select Three pokemon for comparing their Spawn Time and Egg Distance through a chart and their mean. </p>
+        </div>
+
         <div id="poke1"></div>
         <div id="poke2"></div>
         <div id="poke3"></div>
-        
+
         <div class="doneButton"> <button id="done">Done</button></div>
-        
+
       </div>
-     
+
       <div id="pokeStats2">
         <div class="divChart"><canvas id="myChart" ></canvas></div>
         <div class="tryAgainButton"><button id="tryAgain">Try Again</button></div> 
@@ -112,33 +115,50 @@
           <img class="mainPokemonImg" id="mainImg" src="imagenes/007.png"></figure>
         <figure class="imgTypeElement"><img class="typeCard" id="typeImg1" src="imagenes/grass.png"><img
             class="typeCard" id="typeImg2" src="imagenes/poison.png"></figure>
-        <div class=typeElementCard><span id = "elemntType1">Grass</span><span id = "elemntType2">Poison</span></div>
+        <div class=typeElementCard><span id="elemntType1">Grass</span><span id="elemntType2">Poison</span></div>
 
         <div class="height">
-          <h4 >Height</h4><span class="infoHeight" id = "height">0.71m</span>
-          <h4>Weight</h4><span class="infoHeight" id = "weight">6.9kg</span>
+          <h4>Height</h4><span class="infoHeight" id="height">0.71m</span>
+          <h4>Weight</h4><span class="infoHeight" id="weight">6.9kg</span>
         </div>
 
 
         <div class="weaknesses">
-          <h4>Weaknesses</h4><span class="info" id = "infoWeaknesses">Fire,Ice,Flying,Psychic</span>
+          <h4>Weaknesses</h4><span class="info" id="infoWeaknesses">Fire,Ice,Flying,Psychic</span>
         </div>
         <hr class="lineCard" />
 
         <span class="evolutionsTittle">Evolutions</span>
 
-        <div class="evolutions"><img id="evo1" src="imagenes/007.png">
+        <div class="evolutions">
+          <div class="evolution" id ="divEvo1">
+            <div class = "imgEvolution"><img id="evo1" src="imagenes/007.png"></div>
+            <div class="infoEvo1"><span id="numEvo1">007</span>
+              <span id="nameEvo1">Squirtle</span></div>
+          </div>
 
-          <img id="flechatransparente" src="imagenes/flechatransparente.png">
-          <img id="evo2" src="imagenes/008.png">
+          <img id="flechatransparente1" src="imagenes/flechatransparente.png">
 
-          <img id="flechatransparente" src="imagenes/flechatransparente.png">
-          <img id="evo3" src="imagenes/009.png"></div>
-        <div class="infoEvolutions">
-          <div class="infoEvo1"><span class="numEvo">007</span><span class="nameEvo">Squirtle</span></div>
-          <div class="infoEvo2"><span class="numEvo">008</span><span>Wartotle</span></div>
-          <div class="infoEvo3"><span class="numEvo">009</span><span>Blastoise</span></div>
+          <div class="evolution" id ="divEvo2">
+            <div class = "imgEvolution"><img id="evo2" src="imagenes/008.png"></div>
+            <div class="infoEvo2"><span id="numEvo2">008</span>
+              <span id="nameEvo2">Wartotle</span></div>
+          </div>
+
+          <img id="flechatransparente2" src="imagenes/flechatransparente.png">
+
+          <div class="evolution" id = "divEvo3">
+            <div class = "imgEvolution"><img id="evo3" src="imagenes/009.png"></div>
+            <div class="infoEvo3"><span id="numEvo3">009</span>
+              <span id="nameEvo3">Blastoise</span></div>
+          </div>
+
         </div>
+        <!-- <div class="infoEvolutions">
+          
+          
+         
+        </div> -->
       </div>
 
     </main>
