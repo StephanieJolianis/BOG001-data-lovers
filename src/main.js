@@ -8,6 +8,7 @@ import { findData2 } from './data.js';
 
 
 
+
 // Menu Function ---------------------------------------------------------------------------
 document.getElementById("menuBtn").addEventListener("click", openNav);
 document.getElementById("closeBtn").addEventListener("click", closeNav);
@@ -469,11 +470,23 @@ select1.setAttribute("id", "select1")
 select2.setAttribute("id", "select2")
 select3.setAttribute("id", "select3")
 
+var option0S1=document.createElement("option");
+var option0S2=document.createElement("option");
+var option0S3=document.createElement("option");
+
+option0S1.text="Select a Pokémon";
+option0S2.text="Select a Pokémon";
+option0S3.text="Select a Pokémon";
+
+select1.appendChild(option0S1);
+select2.appendChild(option0S2);
+select3.appendChild(option0S3);
+
 for (let i in result) {
   var option1=document.createElement("option");
   var option2=document.createElement("option");
   var option3=document.createElement("option");
-  //option.setAttribute("value", result[i].name);
+  
   option1.text=result[i].name;
   option2.text=result[i].name;
   option3.text=result[i].name;
@@ -514,54 +527,65 @@ select3.addEventListener("change", selectedOptions);
 
 const showStats = () => {
   
-   
-  pokeStatsPage1.style.display=null;
-  pokeStatsPage2.style.display="block";
-  var spawn1=findData2(result, labelsPoke[0])[0].spawnTime;
-  var spawn2=findData2(result, labelsPoke[1])[0].spawnTime;
-  var spawn3=findData2(result, labelsPoke[2])[0].spawnTime;
-  var spawnMinutes1=parseInt(spawn1.split(":")[0])+parseInt(spawn1.split(":")[1])/60;
-  var spawnMinutes2=parseInt(spawn2.split(":")[0])+parseInt(spawn2.split(":")[1])/60;
-  var spawnMinutes3=parseInt(spawn3.split(":")[0])+parseInt(spawn3.split(":")[1])/60;
 
-  var egg1=parseFloat(findData2(result, labelsPoke[0])[0].eggDistance);
-  var egg2=parseFloat(findData2(result, labelsPoke[1])[0].eggDistance);
-  var egg3=parseFloat(findData2(result, labelsPoke[2])[0].eggDistance);
-  console.log(findData2(result, labelsPoke[0])[0].eggDistance)
-  console.log(egg1);
-  console.log(findData2(result, labelsPoke[1])[0].eggDistance)
-  console.log(egg2);
-  console.log(findData2(result, labelsPoke[2])[0].eggDistance)
-  console.log(egg3);
-  
-  
-  
-  //Chart:
-  new Chart(document.getElementById("myChart"), {
-    type: 'bar',
-    data: {
-      labels: labelsPoke,
-      datasets: [
-        {
-          label: "Spawn Time (Hours)",
-          backgroundColor: "#3e95cd",
-          data: [spawnMinutes1,spawnMinutes2,spawnMinutes3 ]
-        }, {
-          label: "Egg Distance (Km)",
-          backgroundColor: "#8e5ea2",
-          data: [egg1, egg2, egg3]
-        }
+  if(labelsPoke.includes("Select a Pokémon")) {
+    alert("Please select three pokémon to compare");
+  } else {
+    pokeStatsPage1.style.display=null;
+    pokeStatsPage2.style.display="block";
+    var spawn1=findData2(result, labelsPoke[0])[0].spawnTime;
+    var spawn2=findData2(result, labelsPoke[1])[0].spawnTime;
+    var spawn3=findData2(result, labelsPoke[2])[0].spawnTime;
+    var spawnMinutes1=parseInt(spawn1.split(":")[0])+parseInt(spawn1.split(":")[1])/60;
+    var spawnMinutes2=parseInt(spawn2.split(":")[0])+parseInt(spawn2.split(":")[1])/60;
+    var spawnMinutes3=parseInt(spawn3.split(":")[0])+parseInt(spawn3.split(":")[1])/60;
 
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Comparison PokeChart'
+    var candy1=parseFloat(findData2(result, labelsPoke[0])[0].candyCount);
+    var candy2=parseFloat(findData2(result, labelsPoke[1])[0].candyCount);
+    var candy3=parseFloat(findData2(result, labelsPoke[2])[0].candyCount);
+
+    //Chart:
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labelsPoke,
+        datasets: [
+          {
+            label: "Spawn Time (Hours)",
+            backgroundColor: "#3e95cd",
+            fontFamily:"'Raleway', Sans-Serif",
+            data: [spawnMinutes1,spawnMinutes2,spawnMinutes3 ]
+          }, {
+            label: "Candy Count",
+            backgroundColor: "#8e5ea2",
+            fontFamily:"'Raleway', Sans-Serif",
+            data: [candy1, candy2, candy3]
+          }
+
+        ]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Comparison PokeChart',
+          fontFamily:"'Raleway', Sans-Serif",
+        },
+        scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+                }
+          }]
+        },
+        maintainAspectRatio: false,
       }
-    }
-  });
+    });
+  }
 }
+
+
 
 const tryAgain = () => {
   pokeStatsPage1.style.display="block";

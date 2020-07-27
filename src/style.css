@@ -327,9 +327,11 @@ div select option{
 
 }
 
-canvas {
-  height: 450px;
-  width: 300px;
+.divChart {
+  position: relative;
+  margin: auto;
+  height: 40vh;
+  width: 90vw;
 }
 
 
@@ -1031,9 +1033,10 @@ height: 12px;
   }
   
   .divChart {
-    height: 550px;
-    width: 330px;
     position: relative;
+    margin: auto;
+    height: 40vh;
+    width: 40vw;
   }
 
   footer {
