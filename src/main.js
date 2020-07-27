@@ -320,7 +320,7 @@ const showPokeStats = () => {
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
-
+let pokemonCard = document.getElementById("containerCard1")
 const backHome = () => {
   menuBar.style.display=null;
   navMenu.style.display=null;
@@ -329,11 +329,9 @@ const backHome = () => {
   divFilter.style.display=null;
   pokeStatsPage1.style.display=null;
   pokeStatsPage2.style.display=null;
-  pokemonCard.style.display="none";
-  containerCard1.style.display=null;
+  pokemonCard.style.display= null;
   backButton.style.display=null;
   backBar.style.display=null;
-  containerCard1.style.display=null;
 }
 
 pokeStatsButton.addEventListener("click", showPokeStats);
@@ -341,7 +339,6 @@ backButton.addEventListener("click", backHome);
 
 
 // pokemonCard ----------------------------------------------------------
-let pokemonCard = document.getElementById("containerCard1")
 
 const pokemonCardView = () => {
   menuBar.style.display="none";
@@ -363,10 +360,6 @@ const pokemonCardView = () => {
 
 function createDetailPokemon(numPokemon) {
   let callingFind = detailCardPokemon(numPokemon);
-  // let divCardContainer = document.getElementById("containerCard1");
-  // while (divCardContainer.firstChild) {
-  //   divCardContainer.removeChild(divCardContainer.firstChild);
-  // }
   let numName = document.getElementById("pokemonNameNum");
   numName.innerText = callingFind.num + " " + callingFind.name;
   let imagePokemonMain = document.getElementById("mainImg");
@@ -421,9 +414,6 @@ function createDetailPokemon(numPokemon) {
     nameEvo1.innerText = callingFind.evolutions[0].name;
     nameEvo2.innerText = callingFind.evolutions[1].name;
     nameEvo3.innerText = callingFind.evolutions[2].name;
-    // div1.addEventListener("click" , createDetailPokemon(callingFind.evolutions[0].num));
-    // div2.addEventListener("click" , createDetailPokemon(callingFind.evolutions[1].num));
-    // div3.addEventListener("click" , createDetailPokemon(callingFind.evolutions[2].num));
     div1.style.display = "flex";
     div2.style.display = "flex";
     div3.style.display = "flex";
@@ -438,8 +428,6 @@ function createDetailPokemon(numPokemon) {
     numEvo2.innerText = callingFind.evolutions[1].num;
     nameEvo1.innerText = callingFind.evolutions[0].name;
     nameEvo2.innerText = callingFind.evolutions[1].name;
-    // div1.addEventListener("click" , createDetailPokemon(callingFind.evolutions[0].num));
-    // div2.addEventListener("click" , createDetailPokemon(callingFind.evolutions[1].num));
     div1.style.display = "flex";
     div2.style.display = "flex";
     div3.style.display = "none";
@@ -451,18 +439,20 @@ function createDetailPokemon(numPokemon) {
     flecha2.style.display = "none";
   } 
 
-  console.log(div1);
   const divEvolutions = document.querySelectorAll(".evolution");
 
   for (let i = 0; i < divEvolutions.length; i++) {
+    divEvolutions[i].removeEventListener("click",function () {
+      createDetailPokemon(divEvolutions[i].childNodes[3].childNodes[0].innerText);
+    });
     divEvolutions[i].addEventListener("click", function () {
+      console.log("click", i);
       createDetailPokemon(divEvolutions[i].childNodes[3].childNodes[0].innerText);
     });
   }
  pokemonCardView();
 
 }
-
 
 // Crear botones para seleccionar los pokemon en pokestats:
 
@@ -496,9 +486,81 @@ divSelect2.appendChild(select2);
 divSelect3.appendChild(select3);
 
 
+
+let labelsPoke=[];
+
+const selectedOptions =  () => {
+  
+  
+  
+  var selected1=select1.value;
+  var selected2=select2.value;
+  var selected3=select3.value;
+
+  labelsPoke[0]=selected1;
+  labelsPoke[1]=selected2;
+  labelsPoke[2]=selected3;
+
+  
+
+  
+  
+}
+
+select1.addEventListener("change", selectedOptions);
+select2.addEventListener("change", selectedOptions);
+select3.addEventListener("change", selectedOptions);
+
+
 const showStats = () => {
+  
+   
   pokeStatsPage1.style.display=null;
   pokeStatsPage2.style.display="block";
+  var spawn1=findData2(result, labelsPoke[0])[0].spawnTime;
+  var spawn2=findData2(result, labelsPoke[1])[0].spawnTime;
+  var spawn3=findData2(result, labelsPoke[2])[0].spawnTime;
+  var spawnMinutes1=parseInt(spawn1.split(":")[0])+parseInt(spawn1.split(":")[1])/60;
+  var spawnMinutes2=parseInt(spawn2.split(":")[0])+parseInt(spawn2.split(":")[1])/60;
+  var spawnMinutes3=parseInt(spawn3.split(":")[0])+parseInt(spawn3.split(":")[1])/60;
+
+  var egg1=parseFloat(findData2(result, labelsPoke[0])[0].eggDistance);
+  var egg2=parseFloat(findData2(result, labelsPoke[1])[0].eggDistance);
+  var egg3=parseFloat(findData2(result, labelsPoke[2])[0].eggDistance);
+  console.log(findData2(result, labelsPoke[0])[0].eggDistance)
+  console.log(egg1);
+  console.log(findData2(result, labelsPoke[1])[0].eggDistance)
+  console.log(egg2);
+  console.log(findData2(result, labelsPoke[2])[0].eggDistance)
+  console.log(egg3);
+  
+  
+  
+  //Chart:
+  new Chart(document.getElementById("myChart"), {
+    type: 'bar',
+    data: {
+      labels: labelsPoke,
+      datasets: [
+        {
+          label: "Spawn Time (Hours)",
+          backgroundColor: "#3e95cd",
+          data: [spawnMinutes1,spawnMinutes2,spawnMinutes3 ]
+        }, {
+          label: "Egg Distance (Km)",
+          backgroundColor: "#8e5ea2",
+          data: [egg1, egg2, egg3]
+        }
+
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Comparison PokeChart'
+      }
+    }
+  });
 }
 
 const tryAgain = () => {
@@ -508,50 +570,4 @@ const tryAgain = () => {
 
 doneButton.addEventListener("click", showStats);
 tryAgainButton.addEventListener("click", tryAgain);
-
-
-
-
-// Charts:
-var ctx = document.getElementById("myChart").getContext("2d");
-// var Chart=require("chart.js");
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-
-
-
 

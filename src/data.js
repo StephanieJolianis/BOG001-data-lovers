@@ -10,7 +10,9 @@ export const data2 = () => {
       name: prueba1.name,
       type: prueba1.type,
       img: prueba1.img,
-      weaknesses:prueba1.weaknesses
+      weaknesses:prueba1.weaknesses,
+      spawnTime: prueba1.spawn_time,
+      eggDistance: prueba1.egg
     };
     myArray.push(firstObject);
     }
