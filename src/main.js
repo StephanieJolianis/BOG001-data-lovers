@@ -1,12 +1,8 @@
 import { data2, detailCardPokemon } from './data.js';
 import { filterFunction } from './data.js';
 import { sortAzAsc } from './data.js';
-import { sortZaDesc } from './data.js';
 import { sortNumAsc } from './data.js';
-import { sortNumDesc } from './data.js';
 import { findData2 } from './data.js';
-
-
 
 
 // Menu Function ---------------------------------------------------------------------------
@@ -243,7 +239,7 @@ document.getElementById("weaknessButton").addEventListener("click", showWeakness
 document.getElementById("sortButton").addEventListener("click", showSortMenu);
 
 // sortListAzAsc function implementation --------------------------------------------------------
-let sortListAz = sortAzAsc();
+let sortListAz = sortAzAsc(data2(),"aZ");
 const sortListAzAsc = () => {
   createPokemons(sortListAz);
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
@@ -251,7 +247,7 @@ const sortListAzAsc = () => {
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
 
 // sortListZaDesc function implementation ------------------------------------------------------
-let sortListZa = sortZaDesc();
+let sortListZa = sortAzAsc(data2(),"zA");
 const sortListZaDesc = () => {
   createPokemons(sortListZa);
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
@@ -259,7 +255,7 @@ const sortListZaDesc = () => {
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
 
 // sortListNumAsc function implementation -----------------------------------------------------
-let sortNum1 = sortNumAsc();
+let sortNum1 = sortNumAsc(data2(),"1,2");
 const sortListNumAsc = () => {
   createPokemons(sortNum1);
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
@@ -268,7 +264,7 @@ document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 
 
 // sortListNumDesc function implementation ----------------------------------------------------
-let sortNum2 = sortNumDesc();
+let sortNum2 = sortNumAsc(data2(),"2,1");
 const sortListNumDesc = () => {
   createPokemons(sortNum2);
   screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";

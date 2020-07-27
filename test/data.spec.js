@@ -1,5 +1,5 @@
 /*import { data2, anotherExample } from '../src/data.js';*/
-import { data2, filterFunction, sortAzAsc, sortZaDesc, sortNumAsc, sortNumDesc, findData2 } from '../src/data.js';
+import { data2, filterFunction, sortAzAsc, sortNumAsc, findData2, detailCardPokemon } from '../src/data.js';
 //import pokemon from '../src/data/pokemon/pokemon.js';
 const mockData = [{
   "id": 1,
@@ -631,9 +631,6 @@ describe('data2 es una función', () => {
     expect(returns).toHaveLength(151);
   });
 
-
-
-
 });
 
 describe('sortAzAsc es una funcion para ordenar alfabeticamente', () => {
@@ -642,26 +639,31 @@ describe('sortAzAsc es una funcion para ordenar alfabeticamente', () => {
   });
 
   it('la funcion debe retornar en la posicion 0 Abra, en la posicion 150 Zubat', () => {
-    let ordenar = sortAzAsc();
+    let ordenar = sortAzAsc(data2(),"aZ");
     expect(ordenar[0].name).toEqual('Abra');
     expect(ordenar[150].name).toEqual('Zubat');
   });
 
-});
-
-
-describe('sortZaDesc es una funcion para ordenar alfabeticamente', () => {
-  it('is a function', () => {
-    expect(typeof sortZaDesc).toBe('function');
-  });
-
   it('la funcion debe retornar en la posicion 0 Zubat, en la posicion 150 Abra', () => {
-    let ordenar = sortZaDesc();
+    let ordenar = sortAzAsc(data2(),"zA");
     expect(ordenar[0].name).toEqual('Zubat');
     expect(ordenar[150].name).toEqual('Abra');
   });
 
+  it ('la funcion debe retornar en la posicion 0 Blastoise, en la posicion 9 Wartortle', () =>{
+    let ordenar = sortAzAsc(mockData,"aZ");
+    expect(ordenar[0].name).toEqual('Blastoise');
+    expect(ordenar[9].name).toEqual('Wartortle');
+  });
+
+  it ('la funcion debe retornar en la posicion 0 Wartortle, en la posicion 9 Blastoise', () =>{
+    let ordenar = sortAzAsc(mockData,"aZ");
+    expect(ordenar[0].name).toEqual('Blastoise');
+    expect(ordenar[9].name).toEqual('Wartortle');
+  });
+
 });
+
 
 describe('sortNumAsc es una funcion para ordenar numericamente', () => {
   it('is a function', () => {
@@ -669,25 +671,31 @@ describe('sortNumAsc es una funcion para ordenar numericamente', () => {
   });
 
   it('la funcion debe retornar en la posicion 0 001, en la posicion 150 151', () => {
-    let ordenar = sortNumAsc();
+    let ordenar = sortNumAsc(data2(),"1,2");
     expect(ordenar[0].num).toEqual('001');
     expect(ordenar[150].num).toEqual('151');
   });
 
-});
-
-describe('sortNumDesc es una funcion para ordenar numericamente', () => {
-  it('is a function', () => {
-    expect(typeof sortNumDesc).toBe('function');
-  });
-
   it('la funcion debe retornar en la posicion 0 151, en la posicion 150 001', () => {
-    let ordenar = sortNumDesc();
+    let ordenar = sortNumAsc(data2(),"2,1");
     expect(ordenar[0].num).toEqual('151');
     expect(ordenar[150].num).toEqual('001');
   });
 
+  it ('la funcion debe retornar en la posicion 0 001, en la posicion 9 010', () => {
+    let ordenar = sortNumAsc(mockData,"1,2");
+    expect(ordenar[0].num).toEqual('001');
+    expect(ordenar[9].num).toEqual('010');
+  });
+
+  it ('la funcion debe retornar en la posicion 0 010, en la posicion 9 001', () => {
+    let ordenar = sortNumAsc(mockData,"2,1");
+    expect(ordenar[0].num).toEqual('010');
+    expect(ordenar[9].num).toEqual('001');
+  });
+
 });
+
 
 describe('findData2 es una función', () => {
 
@@ -703,6 +711,14 @@ describe('findData2 es una función', () => {
   it('findData2 puede buscar por número', () => {
     let resultadoNum = findData2(mockData, "009");
     expect(resultadoNum).toEqual(num009);
+  });
+
+});
+
+
+describe('detailCardPokemon es una función', () => {
+  it('is a function', () => {
+    expect(typeof detailCardPokemon).toBe('function');
   });
 
 });
