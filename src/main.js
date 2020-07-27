@@ -321,7 +321,7 @@ const showPokeStats = () => {
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
-
+let pokemonCard = document.getElementById("containerCard1")
 const backHome = () => {
   menuBar.style.display=null;
   navMenu.style.display=null;
@@ -330,11 +330,9 @@ const backHome = () => {
   divFilter.style.display=null;
   pokeStatsPage1.style.display=null;
   pokeStatsPage2.style.display=null;
-  pokemonCard.style.display="none";
-  containerCard1.style.display=null;
+  pokemonCard.style.display= null;
   backButton.style.display=null;
   backBar.style.display=null;
-  containerCard1.style.display=null;
 }
 
 pokeStatsButton.addEventListener("click", showPokeStats);
@@ -342,7 +340,6 @@ backButton.addEventListener("click", backHome);
 
 
 // pokemonCard ----------------------------------------------------------
-let pokemonCard = document.getElementById("containerCard1")
 
 const pokemonCardView = () => {
   menuBar.style.display="none";
@@ -364,10 +361,6 @@ const pokemonCardView = () => {
 
 function createDetailPokemon(numPokemon) {
   let callingFind = detailCardPokemon(numPokemon);
-  // let divCardContainer = document.getElementById("containerCard1");
-  // while (divCardContainer.firstChild) {
-  //   divCardContainer.removeChild(divCardContainer.firstChild);
-  // }
   let numName = document.getElementById("pokemonNameNum");
   numName.innerText = callingFind.num + " " + callingFind.name;
   let imagePokemonMain = document.getElementById("mainImg");
@@ -422,9 +415,6 @@ function createDetailPokemon(numPokemon) {
     nameEvo1.innerText = callingFind.evolutions[0].name;
     nameEvo2.innerText = callingFind.evolutions[1].name;
     nameEvo3.innerText = callingFind.evolutions[2].name;
-    // div1.addEventListener("click" , createDetailPokemon(callingFind.evolutions[0].num));
-    // div2.addEventListener("click" , createDetailPokemon(callingFind.evolutions[1].num));
-    // div3.addEventListener("click" , createDetailPokemon(callingFind.evolutions[2].num));
     div1.style.display = "flex";
     div2.style.display = "flex";
     div3.style.display = "flex";
@@ -439,8 +429,6 @@ function createDetailPokemon(numPokemon) {
     numEvo2.innerText = callingFind.evolutions[1].num;
     nameEvo1.innerText = callingFind.evolutions[0].name;
     nameEvo2.innerText = callingFind.evolutions[1].name;
-    // div1.addEventListener("click" , createDetailPokemon(callingFind.evolutions[0].num));
-    // div2.addEventListener("click" , createDetailPokemon(callingFind.evolutions[1].num));
     div1.style.display = "flex";
     div2.style.display = "flex";
     div3.style.display = "none";
@@ -452,11 +440,14 @@ function createDetailPokemon(numPokemon) {
     flecha2.style.display = "none";
   } 
 
-  console.log(div1);
   const divEvolutions = document.querySelectorAll(".evolution");
 
   for (let i = 0; i < divEvolutions.length; i++) {
+    divEvolutions[i].removeEventListener("click",function () {
+      createDetailPokemon(divEvolutions[i].childNodes[3].childNodes[0].innerText);
+    });
     divEvolutions[i].addEventListener("click", function () {
+      console.log("click", i);
       createDetailPokemon(divEvolutions[i].childNodes[3].childNodes[0].innerText);
     });
   }
