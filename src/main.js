@@ -583,6 +583,15 @@ const showStats = () => {
       }
     });
   }
+
+  var spawnArray=[spawnMinutes1, spawnMinutes2, spawnMinutes3];
+  var candyArray=[candy1, candy2, candy3];
+  var candyArrayFinal=candyArray.filter(item=>isNaN(item)==false);
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  
+  document.getElementById("spawnMean").innerHTML = "Spawn Time Mean= " + (spawnArray.reduce(reducer)/spawnArray.length).toFixed(2);
+  document.getElementById("candyMean").innerHTML = "Candy Count Mean= " + (candyArrayFinal.reduce(reducer)/candyArrayFinal.length).toFixed(2);
+
 }
 
 
@@ -594,4 +603,5 @@ const tryAgain = () => {
 
 doneButton.addEventListener("click", showStats);
 tryAgainButton.addEventListener("click", tryAgain);
+
 

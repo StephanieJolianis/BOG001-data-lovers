@@ -319,6 +319,22 @@ div select option{
   
 }
 
+.mean1 {
+  justify-content: center;
+  Font-Family: 'Raleway', Sans-Serif;
+  font-size: medium;
+  color:#2D4C8F;
+  height: 10vh;
+  padding-top: 4vh;
+  
+}
+
+p{
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+}
+
 #tryAgain {
   Font-Family: 'Raleway', Sans-Serif;
   font-size: medium;
