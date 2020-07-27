@@ -327,6 +327,11 @@ div select option{
 
 }
 
+canvas {
+  height: 450px;
+  width: 300px;
+}
+
 
 footer {
   grid-column-start: 1;
@@ -1004,7 +1009,12 @@ height: 20px;
     width: 700px;
     margin-top: 5vh;
   }
-
+  
+  .divChart {
+    height: 550px;
+    width: 330px;
+    position: relative;
+  }
 
   footer {
     grid-column-start: 1;

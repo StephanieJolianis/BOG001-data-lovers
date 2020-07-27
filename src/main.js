@@ -30,8 +30,8 @@ var pikachuOnType = () => {
   document.getElementById("pikachu").style.display = "block";
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
-  
-  
+
+
 }
 
 var pikachuOnWeakness = () => {
@@ -57,7 +57,7 @@ if (screenWidthDesk.matches) {
   document.getElementById("weaknessButton").addEventListener("mouseover", pikachuOnWeakness);
   document.getElementById("sortButton").addEventListener("mouseover", pikachuOnSort);
   document.getElementById("pokestatsButton").addEventListener("mouseover", pikachuOnStats);
-  } else {
+} else {
   document.getElementById("pikachu").style.gridColumnStart = 2;
   document.getElementById("pikachu").style.gridColumnEnd = 3;
 }
@@ -89,11 +89,11 @@ topButton.addEventListener("click", topFunction);
 
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 const createPokemons = (result) => {
-// elimino los child creados en container antes de crear nuevos child ---------------------------
+  // elimino los child creados en container antes de crear nuevos child ---------------------------
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
-// elimino los child creados en container antes de crear nuevos child ---------------------------
+  // elimino los child creados en container antes de crear nuevos child ---------------------------
   for (let pokemonIndex of result) {
 
     let pokemon = document.createElement("div");
@@ -165,33 +165,33 @@ createPokemons(result);
 // Funcion de crear tarjetas pokemon ------------------------------------------------------------
 
 // Filter function implementation -----------------------------------------------
-var initialText="151 pokémons available";
-document.getElementById("pFilter").innerText=initialText;
+var initialText = "151 pokémons available";
+document.getElementById("pFilter").innerText = initialText;
 
 const showTypeFilter = () => {
-  var cath="type";
+  var cath = "type";
   var subcath = event.target.innerHTML;
 
-  if (subcath=="All"){
+  if (subcath == "All") {
     createPokemons(result);
-    document.getElementById("pFilter").innerText=initialText;
-    } else {
-    var resultTypeFilter=filterFunction(result, cath, subcath);
-    let nFilter=resultTypeFilter.length;
-    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
+    document.getElementById("pFilter").innerText = initialText;
+  } else {
+    var resultTypeFilter = filterFunction(result, cath, subcath);
+    let nFilter = resultTypeFilter.length;
+    document.getElementById("pFilter").innerText = nFilter + " pokémon found";
     createPokemons(resultTypeFilter);
-  }  
-  screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none":document.getElementById("typeMenu").style.display="none";
-}    
+  }
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("typeMenu").style.display = "none";
+}
 
 const showTypeMenu = () => {
 
-  if(screenWidthDesk.matches){
-    var displayMenu=document.getElementById("typeMenu");
-    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
-    
-    document.getElementById("weaknessMenu").style.display="none";
-    document.getElementById("sort").style.display="none";
+  if (screenWidthDesk.matches) {
+    var displayMenu = document.getElementById("typeMenu");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display = "block" : displayMenu.style.display = "none";
+
+    document.getElementById("weaknessMenu").style.display = "none";
+    document.getElementById("sort").style.display = "none";
   }
 }
 
@@ -199,39 +199,39 @@ const showTypeMenu = () => {
 
 
 const showWeakFilter = () => {
-  var cath="weaknesses";
+  var cath = "weaknesses";
   var subcath = event.target.innerHTML;
-  if (subcath=="All"){
-    createPokemons(result);  
-    document.getElementById("pFilter").innerText=initialText;
+  if (subcath == "All") {
+    createPokemons(result);
+    document.getElementById("pFilter").innerText = initialText;
   } else {
-    let resultWeakFilter=filterFunction(result, cath, subcath);
-    let nFilter=resultWeakFilter.length;
-    document.getElementById("pFilter").innerText=nFilter+" pokémon found";
+    let resultWeakFilter = filterFunction(result, cath, subcath);
+    let nFilter = resultWeakFilter.length;
+    document.getElementById("pFilter").innerText = nFilter + " pokémon found";
     createPokemons(resultWeakFilter);
   }
-  screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("weaknessMenu").style.display="none";
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("weaknessMenu").style.display = "none";
 }
 
 const showWeaknessMenu = () => {
-  if(screenWidthDesk.matches){
-    var displayMenu=document.getElementById("weaknessMenu");
-    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
+  if (screenWidthDesk.matches) {
+    var displayMenu = document.getElementById("weaknessMenu");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display = "block" : displayMenu.style.display = "none";
 
-    document.getElementById("typeMenu").style.display="none";
-    document.getElementById("sort").style.display="none";
+    document.getElementById("typeMenu").style.display = "none";
+    document.getElementById("sort").style.display = "none";
   }
 }
 
 
 const showSortMenu = () => {
-  if(screenWidthDesk.matches){
-   
-    let displayMenu=document.getElementById("sort");
-    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display="block":displayMenu.style.display="none";
-    
-    document.getElementById("typeMenu").style.display="none";
-    document.getElementById("weaknessMenu").style.display="none";
+  if (screenWidthDesk.matches) {
+
+    let displayMenu = document.getElementById("sort");
+    (displayMenu.style.display == "" || displayMenu.style.display == "none") ? displayMenu.style.display = "block" : displayMenu.style.display = "none";
+
+    document.getElementById("typeMenu").style.display = "none";
+    document.getElementById("weaknessMenu").style.display = "none";
   }
 }
 
@@ -244,24 +244,24 @@ document.getElementById("sortButton").addEventListener("click", showSortMenu);
 // sortListAzAsc function implementation --------------------------------------------------------
 let sortListAz = sortAzAsc();
 const sortListAzAsc = () => {
- createPokemons(sortListAz);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortListAz);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("Az").addEventListener("click", sortListAzAsc);
 
 // sortListZaDesc function implementation ------------------------------------------------------
 let sortListZa = sortZaDesc();
 const sortListZaDesc = () => {
- createPokemons(sortListZa);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortListZa);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("Za").addEventListener("click", sortListZaDesc);
 
 // sortListNumAsc function implementation -----------------------------------------------------
 let sortNum1 = sortNumAsc();
 const sortListNumAsc = () => {
- createPokemons(sortNum1);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortNum1);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 
@@ -269,21 +269,21 @@ document.getElementById("numberAsc").addEventListener("click", sortListNumAsc);
 // sortListNumDesc function implementation ----------------------------------------------------
 let sortNum2 = sortNumDesc();
 const sortListNumDesc = () => {
- createPokemons(sortNum2);
- screenWidthMobile.matches ? document.getElementById("navMenu").style.display="none" : document.getElementById("sort").style.display="none";
+  createPokemons(sortNum2);
+  screenWidthMobile.matches ? document.getElementById("navMenu").style.display = "none" : document.getElementById("sort").style.display = "none";
 }
 document.getElementById("numberDesc").addEventListener("click", sortListNumDesc);
 // sortListNumDesc function implementation ----------------------------------------------------
 
 // Search Bar Function:
-var searchInput=document.getElementById("searchInput");
+var searchInput = document.getElementById("searchInput");
 
 const searchFunction = () => {
- var searchArray=findData2(result , searchInput.value);
+  var searchArray = findData2(result, searchInput.value);
 
- console.log(typeof(searchArray))
+  console.log(typeof (searchArray))
 
- createPokemons(searchArray);
+  createPokemons(searchArray);
 }
 
 searchInput.addEventListener("keyup", searchFunction);
@@ -363,14 +363,37 @@ const pokemonCardView = () => {
 
 function createDetailPokemon(numPokemon) {
   let callingFind = detailCardPokemon(numPokemon);
+  let numName = document.getElementById("pokemonNameNum");
+  numName.innerText = callingFind.num + " " + callingFind.name;
   let imagePokemonMain = document.getElementById("mainImg");
   imagePokemonMain.src = callingFind.img;
-  let imgPokemonType1= document.getElementById("typeImg1");
-  imgPokemonType1.src =  "imagenes/"+ callingFind.type[0].toLowerCase() + ".png";
+  let imgPokemonType1 = document.getElementById("typeImg1");
+  imgPokemonType1.src = "imagenes/" + callingFind.type[0].toLowerCase() + ".png";
+  let element1 = document.getElementById("elemntType1");
+  element1.innerText = callingFind.type[0];
+  let imgPokemonType2 = document.getElementById("typeImg2");
+  let element2 = document.getElementById("elemntType2");
+
+  if (callingFind.type.length > 1) {
+    imgPokemonType2.src = "imagenes/" + callingFind.type[1].toLowerCase() + ".png";
+    element2.innerText = callingFind.type[1];
+    imgPokemonType2.style.display = null;
+    element2.style.display = null;
+  } else {
+    imgPokemonType2.style.display = "none";
+    element2.style.display = "none";
+  }
+
+  let heightPokemon = document.getElementById("height");
+  heightPokemon.innerText = callingFind.height;
+  let weightPokemon = document.getElementById("weight");
+  weightPokemon.innerText = callingFind.weight;
+  // let weaknessesInfo = document.getElementById("infoWeakness");
+  // weaknessesInfo.innerText = callingFind.weaknesses;
 
   pokemonCardView();
-  
-  
+
+
 }
 
 // Crear botones para seleccionar los pokemon en pokestats:
@@ -405,9 +428,81 @@ divSelect2.appendChild(select2);
 divSelect3.appendChild(select3);
 
 
+
+let labelsPoke=[];
+
+const selectedOptions =  () => {
+  
+  
+  
+  var selected1=select1.value;
+  var selected2=select2.value;
+  var selected3=select3.value;
+
+  labelsPoke[0]=selected1;
+  labelsPoke[1]=selected2;
+  labelsPoke[2]=selected3;
+
+  
+
+  
+  
+}
+
+select1.addEventListener("change", selectedOptions);
+select2.addEventListener("change", selectedOptions);
+select3.addEventListener("change", selectedOptions);
+
+
 const showStats = () => {
+  
+   
   pokeStatsPage1.style.display=null;
   pokeStatsPage2.style.display="block";
+  var spawn1=findData2(result, labelsPoke[0])[0].spawnTime;
+  var spawn2=findData2(result, labelsPoke[1])[0].spawnTime;
+  var spawn3=findData2(result, labelsPoke[2])[0].spawnTime;
+  var spawnMinutes1=parseInt(spawn1.split(":")[0])+parseInt(spawn1.split(":")[1])/60;
+  var spawnMinutes2=parseInt(spawn2.split(":")[0])+parseInt(spawn2.split(":")[1])/60;
+  var spawnMinutes3=parseInt(spawn3.split(":")[0])+parseInt(spawn3.split(":")[1])/60;
+
+  var egg1=parseFloat(findData2(result, labelsPoke[0])[0].eggDistance);
+  var egg2=parseFloat(findData2(result, labelsPoke[1])[0].eggDistance);
+  var egg3=parseFloat(findData2(result, labelsPoke[2])[0].eggDistance);
+  console.log(findData2(result, labelsPoke[0])[0].eggDistance)
+  console.log(egg1);
+  console.log(findData2(result, labelsPoke[1])[0].eggDistance)
+  console.log(egg2);
+  console.log(findData2(result, labelsPoke[2])[0].eggDistance)
+  console.log(egg3);
+  
+  
+  
+  //Chart:
+  new Chart(document.getElementById("myChart"), {
+    type: 'bar',
+    data: {
+      labels: labelsPoke,
+      datasets: [
+        {
+          label: "Spawn Time (Hours)",
+          backgroundColor: "#3e95cd",
+          data: [spawnMinutes1,spawnMinutes2,spawnMinutes3 ]
+        }, {
+          label: "Egg Distance (Km)",
+          backgroundColor: "#8e5ea2",
+          data: [egg1, egg2, egg3]
+        }
+
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Comparison PokeChart'
+      }
+    }
+  });
 }
 
 const tryAgain = () => {
@@ -417,50 +512,4 @@ const tryAgain = () => {
 
 doneButton.addEventListener("click", showStats);
 tryAgainButton.addEventListener("click", tryAgain);
-
-
-
-
-// Charts:
-// var ctx = document.getElementById("myChart").getContext("2d");
-// var Chart=require("chart.js");
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero: true
-//                 }
-//             }]
-//         }
-//     }
-// });
-
-
-
 
