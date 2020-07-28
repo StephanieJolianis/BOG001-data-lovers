@@ -23,9 +23,9 @@ Yo como jugador de pokemon quiero poder hacer click en la imagen del pokemon par
 ### H5. 
 Yo como jugador de pokemon quiero poder comparar el spawn time y el candy count con promedio y gráfico.
 
-- Realizamos un prototipo de baja fidelidad para determinar la idea de las vistas que contendria nuestra página y se sometio a varios feedback de los usuarios implementando asi las mejoras.(src/imagenes/sketch_baja_fidelidad.png)
+- Realizamos un prototipo de baja fidelidad para determinar la idea de las vistas que contendria nuestra página y se sometio a varios feedback de los usuarios implementando asi las mejoras.(/assets/imagenes/sketch_baja_fidelidad.png)
 
--Realizamos prototipo de alta fidelidad de la primera historia de usuario para definir toda la parte de diseño visual de la página(fonts, colors, buttons).(src/imagenes/h1desktop.png)(src/imagenes/h1mobile.png)(https://www.figma.com/file/uuGWLlJlQI6wgRJOdUanSZ/Pokemon?node-id=0%3A1)
+-Realizamos prototipo de alta fidelidad de la primera historia de usuario para definir toda la parte de diseño visual de la página(fonts, colors, buttons).(src/imagenes/h1desktop.png)(/assets/imagenes/h1mobile.png)(https://www.figma.com/file/uuGWLlJlQI6wgRJOdUanSZ/Pokemon?node-id=0%3A1)
 
 -A medida que fuimos desarrollando cada historia ibamos creando el prototipo de alta de la siguiente historia de usuario.(src/imagenes/h4desktop.png)(src/imagenes/h4mobile.png)(src/imagenes/h5mobile1.png)(src/imagenes/h5mobile2.png)(https://www.figma.com/file/hHFSSpg6GJuuHL5TxC7JYx/Untitled)
 
