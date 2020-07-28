@@ -509,11 +509,6 @@ const selectedOptions =  () => {
   labelsPoke[0]=selected1;
   labelsPoke[1]=selected2;
   labelsPoke[2]=selected3;
-
-  
-
-  
-  
 }
 
 select1.addEventListener("change", selectedOptions);
