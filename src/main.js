@@ -527,9 +527,9 @@ const showStats = () => {
     var spawn1=findData2(result, labelsPoke[0])[0].spawnTime;
     var spawn2=findData2(result, labelsPoke[1])[0].spawnTime;
     var spawn3=findData2(result, labelsPoke[2])[0].spawnTime;
-    var spawnMinutes1=parseInt(spawn1.split(":")[0])+parseInt(spawn1.split(":")[1])/60;
-    var spawnMinutes2=parseInt(spawn2.split(":")[0])+parseInt(spawn2.split(":")[1])/60;
-    var spawnMinutes3=parseInt(spawn3.split(":")[0])+parseInt(spawn3.split(":")[1])/60;
+    var spawnHours1=parseInt(spawn1.split(":")[0])+parseInt(spawn1.split(":")[1])/60;
+    var spawnHours2=parseInt(spawn2.split(":")[0])+parseInt(spawn2.split(":")[1])/60;
+    var spawnHours3=parseInt(spawn3.split(":")[0])+parseInt(spawn3.split(":")[1])/60;
 
     var candy1=parseFloat(findData2(result, labelsPoke[0])[0].candyCount);
     var candy2=parseFloat(findData2(result, labelsPoke[1])[0].candyCount);
@@ -547,7 +547,7 @@ const showStats = () => {
             label: "Spawn Time (Hours)",
             backgroundColor: "#3e95cd",
             fontFamily:"'Raleway', Sans-Serif",
-            data: [spawnMinutes1,spawnMinutes2,spawnMinutes3 ]
+            data: [spawnHours1,spawnHours2,spawnHours3 ]
           }, {
             label: "Candy Count",
             backgroundColor: "#8e5ea2",
@@ -575,7 +575,7 @@ const showStats = () => {
     });
   }
 
-  var spawnArray=[spawnMinutes1, spawnMinutes2, spawnMinutes3];
+  var spawnArray=[spawnHours1, spawnHours2, spawnHours3];
   var candyArray=[candy1, candy2, candy3];
   var candyArrayFinal=candyArray.filter(item=>isNaN(item)==false);
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
