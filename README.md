@@ -120,7 +120,7 @@ usuario necesita.
 * [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
 * [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
+* [x] Incluye historias de usuario en `README.md`.
 * [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
 * [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
