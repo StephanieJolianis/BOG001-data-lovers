@@ -23,11 +23,11 @@ Yo como jugador de pokemon quiero poder hacer click en la imagen del pokemon par
 ### H5. 
 Yo como jugador de pokemon quiero poder comparar el spawn time y el candy count con promedio y gráfico.
 
-- Realizamos un prototipo de baja fidelidad para determinar la idea de las vistas que contendria nuestra página y se sometio a varios feedback de los usuarios implementando asi las mejoras.![Skecth Baja Fidelidad](/assets/imagenes/sketch_baja_fidelidad.png)
+- Realizamos un prototipo de baja fidelidad para determinar la idea de las vistas que contendria nuestra página y se sometio a varios feedback de los usuarios implementando asi las mejoras.![Skecth Baja Fidelidad](/src/imagenes/sketch_baja_fidelidad.png)
 
--Realizamos prototipo de alta fidelidad de la primera historia de usuario para definir toda la parte de diseño visual de la página(fonts, colors, buttons).![Skecth Alta Fidelidad Desktop](/assets/imagenes/h1desktop.png)![Skecth Alta Fidelidad Mobile](/assets/imagenes/h1mobile.png)(https://www.figma.com/file/uuGWLlJlQI6wgRJOdUanSZ/Pokemon?node-id=0%3A1)
+-Realizamos prototipo de alta fidelidad de la primera historia de usuario para definir toda la parte de diseño visual de la página(fonts, colors, buttons).![Skecth Alta Fidelidad Desktop](src/imagenes/h1desktop.png)![Skecth Alta Fidelidad Mobile](/src/imagenes/h1mobile.png)(https://www.figma.com/file/uuGWLlJlQI6wgRJOdUanSZ/Pokemon?node-id=0%3A1)
 
--A medida que fuimos desarrollando cada historia ibamos creando el prototipo de alta de la siguiente historia de usuario.![Skecth Alta Fidelidad H4](/assets/imagenes/h4desktop.png)![Skecth Alta Fidelidad H4](/assets/imagenes/h4mobile.png)![Skecth Alta Fidelidad H5](/assets/imagenes/h5mobile1.png)![Skecth Alta Fidelidad H5](/assets/imagenes/h5mobile2.png)(https://www.figma.com/file/hHFSSpg6GJuuHL5TxC7JYx/Untitled)
+-A medida que fuimos desarrollando cada historia ibamos creando el prototipo de alta de la siguiente historia de usuario.![Skecth Alta Fidelidad H4](src/imagenes/h4desktop.png)![Skecth Alta Fidelidad H4](/src/imagenes/h4mobile.png)![Skecth Alta Fidelidad H5](/src/imagenes/h5mobile1.png)![Skecth Alta Fidelidad H5](/src/imagenes/h5mobile2.png)(https://www.figma.com/file/hHFSSpg6GJuuHL5TxC7JYx/Untitled)
 
 ## Después de los test de usabilidad se identifican los siguientes problemas:
 
