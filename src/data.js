@@ -12,7 +12,8 @@ export const data2 = () => {
       img: prueba1.img,
       weaknesses:prueba1.weaknesses,
       spawnTime: prueba1.spawn_time,
-      eggDistance: prueba1.egg
+      eggDistance: prueba1.egg,
+      candyCount: prueba1.candy_count,
     };
     myArray.push(firstObject);
     }
