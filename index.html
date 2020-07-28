@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400" rel="stylesheet">
+  <!-- <script src="node_modules\chart.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 </head>
 
 <body>
@@ -15,89 +17,180 @@
     <figure class="pokemonDictionary">
       <img src="imagenes/logoweb.png">
     </figure>
-    <figure  id="pikachu" class="pikachuImage">
+    <figure id="pikachu" class="pikachuImage">
       <img src="imagenes/pikachuweb.png">
     </figure>
-    
 
-    <div class="menuBar">
-      <a  id="menuBtn"> Menu </a>
-    </div>
-    
+
+    <div class="menuBar"><a id="menuBtn"> Menu </a></div>
+    <div class="backBar"></div>
+    <img id="back" src="imagenes/home3.png">
+
     <nav id="navMenu">
-      <a id= "closeBtn">x</a>
+      <a id="closeBtn">x</a>
       <ul class="mainMenu">
-        <li id="filterButton"><a>Filter </a></li>
-        <li id="sortButton"><a> Sort </a></li>
-        <ul class="sortMenu" id = "sort">
-          <li id= "Az" class="sortMenuOptions"> <a> A-Z</a></li>
-          <li id= "Za" class="sortMenuOptions"><a> Z-A </a></li>
-          <li id= "numberAsc" class="sortMenuOptions"><a> Number Ascendant </a></li>
-          <li id= "numberDesc" class="sortMenuOptions"><a> Number Descendant </a></li>
+        <li id="typeButton">Type</li>
+        <ul id="typeMenu">
+          <li class="typeOptions">All</li>
+          <li class="typeOptions">Bug</li>
+          <li class="typeOptions">Dragon</li>
+          <li class="typeOptions">Electric</li>
+          <li class="typeOptions">Fighting</li>
+          <li class="typeOptions">Fire</li>
+          <li class="typeOptions">Flying</li>
+          <li class="typeOptions">Ghost</li>
+          <li class="typeOptions">Grass</li>
+          <li class="typeOptions">Ground</li>
+          <li class="typeOptions">Ice</li>
+          <li class="typeOptions">Normal</li>
+          <li class="typeOptions">Poison</li>
+          <li class="typeOptions">Psychic</li>
+          <li class="typeOptions">Rock</li>
+          <li class="typeOptions">Water</li>
+
+
         </ul>
-        <li id="pokestatsButton"><a>PokeStats</a></li>
+        <li id="weaknessButton">Weakness</li>
+        <ul id="weaknessMenu">
+          <li class="weaknessOptions">All</li>
+          <li class="weaknessOptions">Bug</li>
+          <li class="weaknessOptions">Dark</li>
+          <li class="weaknessOptions">Dragon</li>
+          <li class="weaknessOptions">Electric</li>
+          <li class="weaknessOptions">Fairy</li>
+          <li class="weaknessOptions">Fighting</li>
+          <li class="weaknessOptions">Fire</li>
+          <li class="weaknessOptions">Flying</li>
+          <li class="weaknessOptions">Ghost</li>
+          <li class="weaknessOptions">Grass</li>
+          <li class="weaknessOptions">Ground</li>
+          <li class="weaknessOptions">Ice</li>
+          <li class="weaknessOptions">Poison</li>
+          <li class="weaknessOptions">Psychic</li>
+          <li class="weaknessOptions">Rock</li>
+          <li class="weaknessOptions">Steel</li>
+          <li class="weaknessOptions">Water</li>
+        </ul>
+        <li id="sortButton"> Sort </li>
+        <ul class="sortMenu" id="sort">
+          <li id="Az" class="sortMenuOptions"> A-Z</li>
+          <li id="Za" class="sortMenuOptions"> Z-A </li>
+          <li id="numberAsc" class="sortMenuOptions"> Number Ascendant </li>
+          <li id="numberDesc" class="sortMenuOptions"> Number Descendant </li>
+        </ul>
+        <li id="pokestatsButton">PokeStats</li>
       </ul>
+
     </nav>
 
-
+    <div id="searchBar"><input id="searchInput" type="text" placeholder="Search your Pokémon  "></div>
 
     <main>
-      <div id= "container">
-      
-        <!--
-
-        <div class="pokemon">
-          <h1 class="name">Bulbasaur</h1>
-          <h3 class="num">001</h3>
-          <figure class="img"><img class="imgPokemon" src="imagenes/001.png"></figure>
-          <div class=type><span class="grass">Grass</span>
-            <span class="poison">Poison</span></div>
+      <div id="container"></div>
+      <div id="divFilter">
+        <p id="pFilter"></p>
+      </div>
+      <div id="pokeStats1">
+        <div class="text">
+          <p> Select Three pokemon for comparing their Spawn Time and Egg Distance through a chart and their mean. </p>
         </div>
 
-       
-        <div class="pokemon">
-          <h1 class="name">Charmander</h1>
-          <h3 class="num">004</h3>
-          <figure class="img"><img class="imgPokemon" src="imagenes/004.png"></figure>
-          <div class=type><span class="fire">Fire</span>
-          </div>
-        </div>
+        <div id="poke1"></div>
+        <div id="poke2"></div>
+        <div id="poke3"></div>
 
--->
+        
 
+        <div class="doneButton"> <button id="done">Done</button></div>
 
       </div>
 
-    
+      <div id="pokeStats2">
+        <div class="divChart"><canvas id="myChart" ></canvas></div>
+        <div class="mean1">
+          <p id=spawnMean></p> 
+          <p id=candyMean></p>
+        </div>
+        <div class="tryAgainButton"><button id="tryAgain">Try Again</button></div> 
+      </div>
+      
+
+      <div class="containerCard" id="containerCard1">
+        <h1 id="pokemonNameNum">007 Squirtle</h1>
+        <figure class="mainPokemon">
+          <img class="mainPokemonImg" id="mainImg" src="imagenes/007.png"></figure>
+        <figure class="imgTypeElement"><img class="typeCard" id="typeImg1" src="imagenes/grass.png"><img
+            class="typeCard" id="typeImg2" src="imagenes/poison.png"></figure>
+        <div class=typeElementCard><span id="elemntType1">Grass</span><span id="elemntType2">Poison</span></div>
+
+        <div class="height">
+          <h4>Height</h4><span class="infoHeight" id="height">0.71m</span>
+          <h4>Weight</h4><span class="infoHeight" id="weight">6.9kg</span>
+        </div>
+
+
+        <div class="weaknesses">
+          <h4>Weaknesses</h4><span class="info" id="infoWeaknesses">Fire,Ice,Flying,Psychic</span>
+        </div>
+        <hr class="lineCard" />
+
+        <span class="evolutionsTittle">Evolutions</span>
+
+        <div class="evolutions" id = "divCardsEvolutions">
+          <div class="evolution" id ="divEvo1">
+            <div class = "imgEvolution"><img id="evo1" src="imagenes/007.png"></div>
+            <div class="infoEvo1"><span id="numEvo1">007</span>
+              <span id="nameEvo1">Squirtle</span></div>
+          </div>
+
+          <img id="flechatransparente1" src="imagenes/flechatransparente.png">
+
+          <div class="evolution" id ="divEvo2">
+            <div class = "imgEvolution"><img id="evo2" src="imagenes/008.png"></div>
+            <div class="infoEvo2"><span id="numEvo2">008</span>
+              <span id="nameEvo2">Wartotle</span></div>
+          </div>
+
+          <img id="flechatransparente2" src="imagenes/flechatransparente.png">
+
+          <div class="evolution" id = "divEvo3">
+            <div class = "imgEvolution"><img id="evo3" src="imagenes/009.png"></div>
+            <div class="infoEvo3"><span id="numEvo3">009</span>
+              <span id="nameEvo3">Blastoise</span></div>
+          </div>
+
+        </div>
+        <!-- <div class="infoEvolutions">
+          
+          
+         
+        </div> -->
+      </div>
 
     </main>
-    <div id="topButton">
-      <img id="topButtonImg" src="imagenes/pokearrow.png">
-      
-    </div>
+
+    <div id="topButton"><img id="topButtonImg" src="imagenes/pokearrow.png"></div>
 
     <footer>
+      <div class="socialNetwork">
+        <a class="network" href="https://www.facebook.com/PokemonGO/" target="_blank">
+          <img src="imagenes/face.png">
+        </a>
 
-    <div class = "socialNetwork">
-      <a id= "network"  href="https://www.facebook.com/PokemonGO/"target="_blank">
-        <img src = "imagenes/face.png"></a>
-
-      <a id= "network" href="https://twitter.com/PokemonGoApp"target="_blank">
-        <img src = "imagenes/twitter.png"></a>
-    </div>
+        <a class="network" href="https://twitter.com/PokemonGoApp" target="_blank">
+          <img src="imagenes/twitter.png">
+        </a>
+      </div>
 
       <div class="officialPage">
-        <a class="officialPage2" href="https://pokemongolive.com/es/"
-               target="_blank">Official Page PokemonGo</a></div>
+        <a class="officialPage2" href="https://pokemongolive.com/es/" target="_blank">Official Page PokemonGo</a>
+      </div>
     </footer>
 
   </div>
 
-  <!--button to top -->
-  
-  <!--button to top -->
   <script src="main.js" type="module"></script>
-  
+
 </body>
 
 </html>
